@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareConnect Chat</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chat-history {
+            width: 20%;
+            background-color: #f9f9f9;
+            border-right: 2px solid #ccc;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .chatbot-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chatbot-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .chatbot-grid {
+            width: 80%;
+            height: 90vh;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            margin-top: 5%;
+        }
+
+        .chatbot-header {
+            background-color: #388E3C;
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Needed for absolute positioning of button */
+        }
+
+        .chatbot-header h2 {
+            margin: 0;
+        }
+
+        .new-chat-button {
+            background-color: #299B25;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+        .new-chat-button:hover{
+            background-color: #1f7a1c;
+        }
+
+        .chatbot-messages {
+            padding: 10px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .message-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .message-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .message {
+            padding: 8px 12px;
+            border-radius: 5px;
+            max-width: 70%;
+        }
+
+        .user-message-container {
+            justify-content: flex-end;
+        }
+
+        .bot-message-container {
+            justify-content: flex-start;
+        }
+
+        .user-message {
+            background-color: #E0F2F7;
+        }
+
+        .bot-message {
+            background-color: #8BC34A;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .chatbot-input button {
+            padding: 10px;
+            margin-left: 5px;
+            background-color: #299B25;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-history">
+        <h3>Chat History</h3>
+    </div>
+    <div class="chatbot-container">
+        <div class="chatbot-grid">
+            <div class="chatbot-header">
+                <h2>CareConnect</h2>
+                <button class="new-chat-button">New Chat</button>
+            </div>
+            <div class="chatbot-messages">
+                <div class="message-container bot-message-container">
+                    <img class="message-avatar" src="{% static 'photo.png' %}" alt="Bot Avatar">
+                    <div class="message bot-message">Welcome to CareConnect</div>
+                </div>
+                <div class="message-container user-message-container">
+                    <div class="message user-message">I have a question regarding Bird Flu.</div>
+                    <img class="message-avatar" src="{% static 'photo.png' %}" alt="User Avatar">
+                </div>
+                <div class="message-container bot-message-container">
+                    <img class="message-avatar" src="{% static 'photo.png' %}" alt="Bot Avatar">
+                    <div class="message bot-message">Go ahead!</div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" name="chatInput" placeholder="Ask CareConnect" required>
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

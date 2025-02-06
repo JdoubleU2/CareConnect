@@ -3,7 +3,7 @@
 #   
 #       Notes:
 #
-#       This script is to prprocess the disease_sympts_prec_full-2.csv file
+#       This script is to prprocess the Diseases_symptoms.csv file
 #       in theory we can proably use it on multiple files so this is going to be
 #       a common script everyone can use.
 #
@@ -12,41 +12,47 @@
 #       just google it.
 #
 #       
-#       youre going to need to change the file paths to run this script
 #       
+#
 ############################################################################
+
+
+
 #!/usr/bin/env python
 import pandas as pd
 import json
 import argparse
 
 def preprocess_csv(csv_file, output_file):
-
-    # Load the CSV file and remove duplicate rows based on the 'symptoms' and 'disease' columns
-    # discuss with team if we need to remove duplicates or not. may or may not be a good idea
+    # Load the CSV file
     df = pd.read_csv(csv_file)
+    
+    # Optional: Remove duplicate rows based on 'Symptoms', 'Name', and 'Treatments'
     initial_count = len(df)
-    df = df.drop_duplicates(subset=["disease", "symptoms"])
+    df = df.drop_duplicates(subset=["Symptoms", "Name", "Treatments"])
     deduped_count = len(df)
     print(f"Removed {initial_count - deduped_count} duplicate rows.")
     
-    # List to hold each processed record
     processed_data = []
     
-    # Define the instruction prompt
-    instruction_text = "Predict the disease based on these symptoms."
+    # Define the instruction prompt for the model
+    instruction_text = ("Based on the following symptoms, predict the disease and recommend appropriate treatments.")
     
     # Iterate over each row of the CSV file
     for index, row in df.iterrows():
-        # Use the "symptoms" column as input and "disease" as output
-        symptoms = row["symptoms"]
-        disease = row["disease"]
+        # Extract the fields; we ignore the "Code" field for training purposes
+        disease_name = row["Name"]
+        symptoms = row["Symptoms"]
+        treatments = row["Treatments"]
         
-        # Create a dictionary for each record
+        # Combine disease and treatments into one output string
+        output_text = f"Disease: {disease_name}; Treatments: {treatments}"
+        
+        # Create an entry dictionary
         entry = {
             "instruction": instruction_text,
             "input": symptoms,
-            "output": disease
+            "output": output_text
         }
         processed_data.append(entry)
     
@@ -60,8 +66,8 @@ def preprocess_csv(csv_file, output_file):
 
 def main():
     # Use raw strings (prefix with r) to prevent escape sequence issues
-    csv_file = r"D:\Jabin\coding\Repos\CareConnect\raw_data\symptoms_diagnosis_data\disease_sympts_prec_full-2.csv"
-    output_file = r"D:\Jabin\coding\Repos\CareConnect\processed_data\symptoms_diagnosis_data\disease_sympts_prec_full-2.jsonl"
+    csv_file = r"D:\Jabin\coding\Repos\CareConnect\raw_data\symptoms_diagnosis_data\Diseases_Symptoms.csv"
+    output_file = r"D:\Jabin\coding\Repos\CareConnect\processed_data\symptoms_diagnosis_data\Diseases_Symptoms_processed.jsonl"
 
     preprocess_csv(csv_file, output_file)
 

@@ -15,13 +15,13 @@ ollama: https://ollama.com/
 ***
 
 Windows setup:
-##### 1. Setup WSL for Windows    
+### 1. Setup WSL for Windows    
 
 Open Powershell
 
 `wsl --install`
 
-##### 2. install VsCode in WSL
+### 2. install VsCode in WSL
 
 Go to VsCode website download the linux version of VsCode.
 
@@ -39,7 +39,7 @@ Open VsCode
     Code
 
 
-##### 3. Install MiniConda on WSL
+### 3. Install MiniConda on WSL
 
     mkdir -p ~/miniconda3
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
@@ -52,6 +52,21 @@ Close and re-open shell
 
 Setup Enviroment 
 
-### Create Conda Enviroment (This takes a while)
+### 1. Create Conda Enviroment (This takes a while)
     
     conda create --name unsloth_env python=3.11 pytorch-cuda=12.1 pytorch cudatoolkit xformers -c pytorch -c nvidia -c xformers -y
+
+Open Enviroment
+
+    conda activate unsloth_env
+
+Install unsloth
+
+    pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+
+Install other dependencys
+
+    pip install --no-deps trl peft accelerate bitsandbytes
+
+
+### Oh yea. Now were cooking. 

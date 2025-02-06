@@ -4,7 +4,7 @@
 
 ***
 
-## This will be the source code for training our model. You will need two things to get started.
+## This will be the source code for training our model. You will need the following to get started.
 
 unsloth: https://github.com/unslothai/unsloth
 
@@ -15,13 +15,13 @@ ollama: https://ollama.com/
 ***
 
 Windows setup:
-1. Setup WSL for Windows    
+##### 1. Setup WSL for Windows    
 
 Open Powershell
 
 `wsl --install`
 
-2. install VsCode in WSL
+##### 2. install VsCode in WSL
 
 Go to VsCode website download the linux version of VsCode.
 
@@ -29,17 +29,17 @@ Put this version inside linux distro
 
 inside WSL shell...
 
-        sudo dpkg -i code_1.96.4-1736991114_amd64.deb
+    sudo dpkg -i code_1.96.4-1736991114_amd64.deb
 
-        sudo apt update
-        sudo apt install -f
+    sudo apt update
+    sudo apt install -f
 
 Open VsCode
 
-        Code
+    Code
 
 
-3. Install MiniConda on WSL
+##### 3. Install MiniConda on WSL
 
         mkdir -p ~/miniconda3
         wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh

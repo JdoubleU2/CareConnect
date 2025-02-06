@@ -12,6 +12,8 @@ CUDA (if you have a GPU): https://developer.nvidia.com/cuda-downloads?target_os=
 
 ollama: https://ollama.com/
 
+Hugging Face tutorial: https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Llama3.2_(1B_and_3B)-Conversational.ipynb#scrollTo=C_sGp5XlG6dq
+
 ***
 
 Windows setup:

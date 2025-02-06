@@ -12,7 +12,7 @@
 #       just google it.
 #
 #       
-#       
+#       youre going to need to change the file paths to run this script
 #
 ############################################################################
 
@@ -66,8 +66,8 @@ def preprocess_csv(csv_file, output_file):
 
 def main():
     # Use raw strings (prefix with r) to prevent escape sequence issues
-    csv_file = r"D:\Jabin\coding\Repos\CareConnect\raw_data\symptoms_diagnosis_data\Diseases_Symptoms.csv"
-    output_file = r"D:\Jabin\coding\Repos\CareConnect\processed_data\symptoms_diagnosis_data\Diseases_Symptoms_processed.jsonl"
+    csv_file = "CareConnect/raw_data/symptoms_diagnosis_data/Diseases_Symptoms.csv"
+    output_file = "CareConnect/processed_data/symptoms_diagnosis_data/Diseases_Symptoms_processed.jsonl"
 
     preprocess_csv(csv_file, output_file)
 

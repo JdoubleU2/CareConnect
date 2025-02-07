@@ -52,7 +52,7 @@ Close and re-open shell
 
 ***
 
-Setup Enviroment 
+## Setup Enviroment 
 
 ### 1. Create Conda Enviroment (This takes a while)
     
@@ -75,32 +75,34 @@ Install other dependencys
 
 ***
 
-## MAC install (ARM)
+## MAC Setup (ARM)
 
-Install miniconda
+### 1. Install miniconda
 
     mkdir -p ~/miniconda3
     curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
     bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
     rm ~/miniconda3/miniconda.sh
 
-Close and reopen terminal 
+### 2. Close and reopen terminal 
 
     source ~/miniconda3/bin/activate
 
-Close and reopen terminal 
+### 3. Close and reopen terminal 
 
     conda init --all
 
-Create enviorment 
+## Create enviorment 
 
     conda create --name unsloth_env python=3.11 pytorch torchvision torchaudio -c pytorch -y
 
-Open Enviroment
+### 1. Open Enviroment
 
     conda activate unsloth_env
 
-Install Packages to run without GPU (If you made it this far and think you plan on training the model on MAC.... i got bad news for ya)
+### 2. Install Packages to run without GPU 
+
+(If you made it this far and think you plan on training the model on MAC.... i got bad news for ya)
 
     pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cpu
     pip install tensorflow-macos tensorflow-metal

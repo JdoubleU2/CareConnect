@@ -131,7 +131,7 @@ You also could just run the finetune.ipynb file in google collab. Sorry ou had t
     #put your login stuff here
     #login("Your token here")
     
-Your Model will be saved at https://huggingface.co/<YourUserName>/careconnect-llama3.2-3b. From here, you can obtain the ollama command to run the model with ollama 
+Your Model will be saved at https://huggingface.co/YourUserName/careconnect-llama3.2-3b. From here, you can obtain the ollama command to run the model with ollama 
 
 
 

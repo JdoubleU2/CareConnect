@@ -1,0 +1,3 @@
+[submodule "finetune/careconnect-llama3.2-3b"]
+	path = finetune/careconnect-llama3.2-3b
+	url = https://huggingface.co/JdoubleU/careconnect-llama3.2-3b

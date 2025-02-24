@@ -1,0 +1,86 @@
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, itching, jaundice,  abdominal pain", "output": "Primary Biliary Cholangitis (PBC)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Muscle weakness, atrophy, respiratory problems", "output": "Spinal Muscular Atrophy (SMA)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Widespread pain, fatigue, sleep disturbances, cognitive difficulties", "output": "Fibromyalgia"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Loud snoring, daytime sleepiness, morning headaches", "output": "Sleep Apnea"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Dizziness, lightheadedness, fainting,  rapid heart rate upon standing", "output": "Postural Orthostatic Tachycardia Syndrome (POTS)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Severe burning pain, swelling, changes in skin color and temperature", "output": "Complex Regional Pain Syndrome (CRPS)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, weight gain, constipation", "output": "Hashimoto's Thyroiditis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Involuntary muscle contractions, twisting, tremors", "output": "Dystonia"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pelvic pain, frequent urination, urgency", "output": "Interstitial Cystitis/Bladder Pain Syndrome (IC/BPS)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Respiratory problems, kidney problems, skin lesions", "output": "Granulomatosis with Polyangiitis (GPA)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Dry eyes, dry mouth, fatigue", "output": "Sjogren's Syndrome"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Liver problems, neurological symptoms, psychiatric symptoms", "output": "Wilson's Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Muscle weakness, fatigue, muscle pain", "output": "Polymyositis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Muscle pain and stiffness in shoulders and hips, Symptoms: Yes, Notes: Often associated with Giant Cell Arteritis", "output": "Polymyalgia Rheumatica"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Allergic-type reactions, hives, itching,  flushing", "output": "Mast Cell Activation Syndrome (MCAS)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Chest pain, shortness of breath, fatigue", "output": "Autoimmune Myocarditis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Kidney problems, skin lesions, nerve damage", "output": "Microscopic Polyangiitis (MPA)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Symptoms overlapping with lupus, scleroderma, and polymyositis", "output": "Mixed Connective Tissue Disease (MCTD)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Lower back pain, stiffness, Notes: Yes", "output": "Ankylosing Spondylitis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Easy bruising, bleeding gums, petechiae", "output": "Idiopathic Thrombocytopenic Purpura (ITP)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Headache, jaw pain, vision changes,  fever", "output": "Giant Cell Arteritis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abdominal pain, neurological symptoms, skin sensitivity to light", "output": "Porphyria"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Joint pain, swelling, stiffness", "output": "Psoriatic Arthritis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, fever, weight loss,  decreased pulses in the arms and legs", "output": "Takayasu Arteritis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Balance problems, eye movement difficulties, swallowing problems", "output": "Progressive Supranuclear Palsy (PSP)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, joint pain, abdominal pain", "output": "Hemochromatosis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Movement problems, balance issues, autonomic dysfunction", "output": "Multiple System Atrophy (MSA)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Muscle weakness, twitching, slurred speech", "output": "Amyotrophic Lateral Sclerosis (ALS)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, numbness, tingling, vision problems, muscle weakness", "output": "Multiple Sclerosis (MS)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Muscle weakness, wasting, cataracts", "output": "Myotonic Dystrophy"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Gait disturbance, urinary incontinence, dementia", "output": "Normal Pressure Hydrocephalus (NPH)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, abdominal pain, elevated liver enzymes", "output": "Non-alcoholic Fatty Liver Disease (NAFLD)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, weakness, weight loss", "output": "Addison's Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Joint hypermobility, skin hyperextensibility, fragile skin", "output": "Ehlers-Danlos Syndromes (EDS)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Mouth sores, genital sores, eye inflammation,  skin lesions", "output": "Behcet's Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Headache, jaw pain, vision changes", "output": "Temporal Arteritis (Giant Cell Arteritis)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Irregular periods, acne, excess hair growth,  weight gain", "output": "Polycystic Ovary Syndrome (PCOS)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "High blood pressure, headaches, sweating", "output": "Pheochromocytoma"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Skin thickening, joint pain, Raynaud's phenomenon,  organ damage", "output": "Systemic Sclerosis (Scleroderma)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Rapid-onset muscle weakness, paralysis, Notes: Sometimes", "output": "Guillain-Barr\u00e9 Syndrome"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Anxiety, weight loss, rapid heart rate", "output": "Graves' Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Asthma, sinusitis, nerve damage", "output": "Churg-Strauss Syndrome (Eosinophilic Granulomatosis with Polyangiitis - EGPA)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Respiratory problems, kidney problems, skin lesions", "output": "Granulomatosis with Polyangiitis (GPA) (formerly Wegener's Granulomatosis)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, cough, shortness of breath,  skin rashes", "output": "Sarcoidosis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, itching, jaundice,  abdominal pain", "output": "Primary Sclerosing Cholangitis (PSC)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, weight changes, mood changes,  temperature sensitivity", "output": "Thyroid Disorders (Hypothyroidism/Hyperthyroidism)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Blood clots, strokes, miscarriages", "output": "Antiphospholipid Syndrome"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Weight gain, fatigue, muscle weakness, high blood pressure", "output": "Cushing's Syndrome"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fever, headache, fatigue, joint pain, rash", "output": "Lyme Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Digestive problems, bloating, fatigue, skin rash, anemia", "output": "Celiac Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, swelling, numbness,  tingling", "output": "Amyloidosis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Severe burning pain, swelling, skin changes", "output": "Complex Regional Pain Syndrome (CRPS)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Joint pain, eye inflammation, urethritis", "output": "Reactive Arthritis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abdominal pain, diarrhea, weight loss", "output": "Inflammatory Bowel Disease (IBD)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Joint pain, swelling, stiffness,  fatigue", "output": "Rheumatoid Arthritis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abdominal pain, diarrhea, weight loss, fatigue", "output": "Crohn's Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, fever, weight loss", "output": "Takayasu Arteritis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, fever, weight loss", "output": "Vasculitis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Dry eyes, dry mouth, fatigue,  joint pain", "output": "Sjogren's Syndrome"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Shortness of breath, wheezing, chronic cough,  liver problems", "output": "Alpha-1 Antitrypsin Deficiency"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Involuntary movements, cognitive decline, psychiatric issues", "output": "Huntington's Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abdominal pain, bloating, constipation, diarrhea", "output": "Irritable Bowel Syndrome (IBS)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "High calcium levels, kidney stones, bone pain", "output": "Parathyroid Adenoma"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Increased thirst, frequent urination, fatigue, blurred vision", "output": "Diabetes (Type 2)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Shortness of breath, fatigue, chest pain, dizziness", "output": "Pulmonary Hypertension"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Inflammation of cartilage in various parts of the body, pain, swelling", "output": "Relapsing Polychondritis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Masses or swelling in various organs, fatigue, weight loss", "output": "IgG4-Related Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Mouth sores, genital sores, eye inflammation", "output": "Behcet's Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Digestive problems, bloating, fatigue", "output": "Celiac Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Headache, jaw pain, vision changes", "output": "Giant Cell Arteritis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, joint pain, abdominal pain,  skin discoloration", "output": "Hemochromatosis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, weakness, weakness, abdominal pain, nausea, low blood pressure", "output": "Adrenal Insufficiency"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Shortness of breath, dry cough, fatigue", "output": "Idiopathic Pulmonary Fibrosis (IPF)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, joint pain, skin rash, kidney problems", "output": "Lupus"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Excessive thirst, frequent urination, Notes: Sometimes", "output": "Diabetes Insipidus"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Muscle weakness, fatigue, drooping eyelids, double vision", "output": "Myasthenia Gravis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Bloating, gas, abdominal pain,  diarrhea", "output": "Small Intestinal Bacterial Overgrowth (SIBO)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abdominal pain, neurological symptoms, skin sensitivity", "output": "Porphyria"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Muscle weakness, skin rash, muscle pain", "output": "Dermatomyositis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Tremor, rigidity, slow movement", "output": "Parkinson's Disease"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, fever, weight loss,  rash", "output": "Vasculitis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Muscle cramps, tingling, seizures", "output": "Hypoparathyroidism"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, jaundice, abdominal pain,  liver inflammation", "output": "Autoimmune Hepatitis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Asthma, sinusitis, nerve damage,  skin lesions", "output": "Eosinophilic Granulomatosis with Polyangiitis (EGPA)"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pelvic pain, heavy periods, infertility, chronic pain", "output": "Endometriosis"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Weight gain, moon face, buffalo hump", "output": "Cushing's Syndrome"}

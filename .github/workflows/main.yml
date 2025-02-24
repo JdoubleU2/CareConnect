@@ -1,0 +1,33 @@
+name: FormatChecker.py
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'  
+      
+      - name: Install Git LFS
+        run: git lfs install
+
+      - name: Pull LFS Files
+        run: git lfs pull
+
+      - name: Set execute permission for formatchecker.py
+        run: chmod +x unit_test/formatchecker.py
+
+      - name: Run Unit Tests
+        run:  python3 unit_test/formatchecker.py

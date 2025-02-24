@@ -19,6 +19,12 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'  
+      
+      - name: Install Git LFS
+        run: git lfs install
+
+      - name: Pull LFS Files
+        run: git lfs pull
 
       - name: Set execute permission for formatchecker.py
         run: chmod +x unit_test/formatchecker.py

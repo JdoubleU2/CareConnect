@@ -1,0 +1,342 @@
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Hallucinations (usually hearing voices ), delusions, social isolation, flat affect, confused thinking ", "output": "Schizophrenia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Chronic cough, fever, cough with bloody mucus, weight loss ", "output": "Tuberculosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Skin which feels tight, area may feel heavy ", "output": "Edema "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "An affected part turning white, then blue, then red, burning ", "output": "Raynaud syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "No menstrual periods for a year ", "output": "Menopause "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Weight loss, cough, shortness of breath, haemoptysis, fatigue, malaise, chest pain, sputum production, fever ", "output": "Chronic pulmonary aspergillosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Shortness of breath, wheezing, yellowish skin ", "output": "Alpha-1 antitrypsin deficiency "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Feeling tired, pale color, fever, easy bleeding or bruising, bone pain, enlarged lymph nodes ", "output": "Acute lymphoblastic leukemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Feeling tired, shortness of breath, easy bruising and bleeding, increased risk of infection ", "output": "Acute myeloid leukemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Variable, including almost any neurological symptom or sign, with autonomic, visual, motor, and sensory problems being the most common. ", "output": "Multiple sclerosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Distorted or blurred vision at all distances, eyestrain, headaches ", "output": "Astigmatism "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Sore throat, fever, enlargement of the tonsils, trouble swallowing, large lymph nodes around the neck ", "output": "Tonsillitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Dizziness, clumsiness, giddiness, headaches, lightheadedness, fatigue, nausea, blurred vision, shakiness, breathlessness, increased thirst, irregular heartbeat, chest pain, fever, seizures ", "output": "Hypotension "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Thick nasal mucus, plugged nose, pain in the face, fever, sore throat, frequent attacks of cough ", "output": "Sinusitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Blackheads, whiteheads, pimples, oily skin, scarring ", "output": "Acne "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Rash, Itchiness, Eczematous lesions, Pain ", "output": "Extramammary Paget's disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Worrying, fast heart rate, shakiness ", "output": "Anxiety disorder "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Absent or delayed puberty, infertility, inability to smell ", "output": "Kallmann syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "small blisters that break open to form painful ulcers, flu-like symptoms ", "output": "Genital herpes "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Atherosclerosis ", "output": "Dyslipidemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Increased risk of a broken bone ", "output": "Osteoporosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "False beliefs, seeing or hearing things that others do not see or hear, incoherent speech and behavior ", "output": "Psychosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Blood in the urine, lump in the abdomen, back pain ", "output": "Kidney cancer "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "feelings of panic or dread, sudden motor activity, thrashing, sweating, rapid breathing, increased heart rate ", "output": "Night terror "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Painless raised area of skin that may be shiny with small blood vessel running over it or ulceration ", "output": "Basal-cell carcinoma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "abdominal pain, diarrhea, weight loss, itching and rash ", "output": "Strongyloidiasis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fever, sore throat, enlarged lymph nodes in the neck, fatigue ", "output": "Infectious mononucleosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Redness, skin breakdown and crusting at the corner of the mouth ", "output": "Angular cheilitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Feeling tired, pale skin, weakness, shortness of breath, feeling faint ", "output": "Anemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Altered level of consciousness, mood changes, personality changes, movement problems slurred speech, Sleep problems, Anxiety or irritability, Muscle twitches (myoclonus), Difficulty concentrating or short attention span, Flapping hand motion (asterixis), Reduced alertness, Cognitive impairment (confused thinking or judgment). ", "output": "Hepatic encephalopathy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "fever, shock, abdominal pain ", "output": "Tertiary peritonitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Palpitations, muscle pain, muscle weakness, numbness ", "output": "Hyperkalemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Inability to move the facial muscles on one side, change in taste, pain around the ear ", "output": "Bell's palsy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Buttock pain that is worse with sitting ", "output": "Piriformis syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Nausea, vomiting ", "output": "Morning sickness "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Painless goiter, weight gain, feeling tired, constipation, depression, dry skin, hair loss ", "output": "Hashimoto's thyroiditis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pelvic pain, infertility ", "output": "Endometriosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Headache, nausea, vomiting, decreased consciousness, seizures ", "output": "Cerebral edema "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Enlarged lymph nodes, fever, sweats, unintended weight loss, itching, feeling tired ", "output": "Lymphoma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Recurring episodes of wheezing, coughing, chest tightness, shortness of breath ", "output": "Asthma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "kidney stones, weakness, depression, bone pains, confusion, increased urination ", "output": "Hyperparathyroidism "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "feeling tired, shortness of breath, easy bleeding, frequent infections ", "output": "Myelodysplastic syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Photophobia, hot/prickly/gritty sensation in eye, Eye redness without pain, Watery eyes ", "output": "Episcleritis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Mild specific body features, absence of subcutaneous fat, muscle hypertrophy, insulin resistance, gigantism / acromegaly, large appetite ", "output": "Congenital generalized lipodystrophy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Nausea ", "output": "Vomiting "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Chest pain, shortness of breath, nausea/vomiting, dizziness or lightheadedness, cold sweat, feeling tired ; arm, neck, back, jaw, or stomach pain, decreased level or total loss of consciousness ", "output": "Myocardial infarction "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Tics ", "output": "Tourette syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Blurred or no vision in the center of the visual field ", "output": "Macular degeneration "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, irritability and other mood changes, tender breasts, abdominal bloating ", "output": "Premenstrual syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Hearing sound when no external sound is present ", "output": "Tinnitus "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "facial asymmetry, vision problems, headache ", "output": "Silent sinus syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Xerostomia, polydipsia, fluid-seeking behavior ", "output": "Primary polydipsia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "vomiting blood, passing black stool ", "output": "Esophageal varices "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Malaise, weakness ", "output": "Subacute bacterial endocarditis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Low skin moisture, itching, scaling, skin cracking ", "output": "Xeroderma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Leg swelling, feeling tired, vomiting, loss of appetite, confusion ", "output": "Chronic kidney disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain, paresthesia, paresis, anesthesia, paralysis ", "output": "Neuritis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain, numbness, or weakness in the arms or legs ", "output": "Spinal stenosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "itchiness, pimple -like rash ", "output": "Scabies "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Easy bruising ", "output": "Haemophilia B "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Lower abdominal pain, vaginal discharge, fever, burning with urination, pain with sex, irregular menstruation ", "output": "Pelvic inflammatory disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Single red and slightly scaly area, followed ", "output": "Pityriasis rosea "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Multiple inflamed and swollen skin lesions ", "output": "Hidradenitis suppurativa "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Decreased level or total loss of consciousness, abnormal or no breathing, no pulse ", "output": "Cardiac arrest "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Nausea ", "output": "Barrett's esophagus "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "A lump in a breast, a change in breast shape, dimpling of the skin, fluid from the nipple, a newly inverted nipple, a red scaly patch of skin on the breast ", "output": "Breast cancer "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Micrognathia, glossoptosis, obstruction of the upper airway, sometimes cleft palate ", "output": "Pierre Robin sequence "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pains, swelling ", "output": "Tendinopathy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "More often with standing: lightheadedness, trouble thinking, tachycardia, weakness, palpitations, heat intolerance, acrocyanosis ", "output": "Postural orthostatic tachycardia syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Drinking large amounts of alcohol over a long period, difficulty cutting down, acquiring and drinking alcohol taking up a lot of time, usage resulting in problems, withdrawal occurring when stopping ", "output": "Alcoholism "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Blisters that break open and form small ulcers, fever, swollen lymph nodes ", "output": "Herpes "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Vaginal discharge that often smells like fish, burning with urination ", "output": "Bacterial vaginosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Shortness of breath, chest pain, coughing up blood ", "output": "Pulmonary embolism "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Painful small rough skin growth ", "output": "Boil "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Short height ", "output": "Growth hormone deficiency "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Swollen lymph nodes, fevers, enlarged liver or spleen, liver dysfunction, rash ", "output": "T-cell lymphoma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Feeling tired, abdominal pain, nausea, Yellowish skin, blood clotting problems, confusion ", "output": "Paracetamol poisoning "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Recurrent, severe headaches on one side of the head, eye watering, stuffy nose ", "output": "Cluster headache "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Rigidity, slowness of movement, tremor, difficulty walking ", "output": "Parkinson's disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Cough, shortness of breath, chest pain, fever ", "output": "Pneumonia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Upper abdominal pain ", "output": "Indigestion "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Irritability, muscle weakness, sleeping problems, fast heartbeat, heat intolerance, diarrhea, enlargement of the thyroid, weight loss ", "output": "Hyperthyroidism "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Red burn-like sores or ulcers throughout the mouth ", "output": "Mucositis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Runny nose, fever, cough ", "output": "Whooping cough "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Intestinal form : nausea, vomiting, diarrhea, abdominal pain", "output": "Anthrax "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Heart palpitations, fainting, shortness of breath, chest pain ", "output": "Atrial fibrillation "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Nausea, vomiting, stomach pain ", "output": "Cannabinoid hyperemesis syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Injection form : fever, abscess ", "output": "Anthrax "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Injury to the brain or skull ", "output": "Head injury "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain during first few days of menstruation, diarrhea, nausea ", "output": "Dysmenorrhea "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fever, chills, severe headaches, muscle aches, nausea, vomiting, diarrhea, loss of appetite, confusion, and splotchy or pinpoint rash. More severe symptoms include brain or nervous system damage, respiratory failure, uncontrollable bleeding, organ failure, and death. ", "output": "Ehrlichiosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fever, vomiting, headache, yellow skin ", "output": "Malaria "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Areas of hair loss, usually on the scalp ", "output": "Alopecia areata "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Progressive insomnia, ataxia, double vision, weight loss, high blood pressure, excessive sweating ", "output": "Fatal insomnia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Increased thirst, frequent urination, unexplained weight loss, increased hunger ", "output": "Type 2 diabetes "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Difficulties in social interaction, verbal and nonverbal communication, and the presence of repetitive behavior or restricted interests ", "output": "Autism spectrum "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "White patches or vaginal discharge, itching ", "output": "Candidiasis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Mouth sores, genital sores, inflammation of the eye, arthritis, chronic fatigue ", "output": "Beh\u00e7et's disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Chest pain, fatigue ", "output": "Pulmonary hypertension "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Excessive daytime sleepiness, involuntary sleep episodes, sudden loss of muscle strength, hallucinations ", "output": "Narcolepsy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Skin form : small blister with surrounding swelling", "output": "Anthrax "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Compulsion to scratch an irritated area of skin ", "output": "Itch "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "First degree : Red without blisters Second degree : Blisters and pain Third degree : Area stiff and not painful Fourth degree : Bone and tendon loss ", "output": "Burn "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Persistent diarrhea ", "output": "Microscopic colitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Inability to gain or maintain an erection ", "output": "Erectile dysfunction "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Itching that can result in trouble sleeping ", "output": "Head lice infestation "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Firmly attached white patch on a mucous membrane, changes with time ", "output": "Leukoplakia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abdominal pain, diarrhea (may be bloody), fever, weight loss, fatigue, mouth sores, reduced appetite ", "output": "Crohn's disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Typically none ", "output": "Hepatitis C "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Palpitations, atypical precordial pain, dyspnea on exertion, low BMI, electrocardiogram abnormalities ( ventricular tachycardia ), syncope, low blood pressure, headaches, lightheadedness, other signs suggestive of autonomic nervous system dysfunction ( dysautonomia ) ", "output": "Mitral valve prolapse "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Rash, muscle weakness, weight loss, fever ", "output": "Dermatomyositis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Lump, abnormal bleeding, prolonged cough, unexplained weight loss, change in bowel movements ", "output": "Cancer "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Easy and prolonged bleeding ", "output": "Haemophilia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Nausea, vomiting, abdominal pain, feeling full after eating just a few bites ", "output": "Gastroparesis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Dry eyes, irritation, redness, discharge, blurred vision ", "output": "Dry eye syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Chronic pain of the bladder, feeling the need to urinate right away, needing to urinate often, pain with sex ", "output": "Interstitial cystitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Facial redness, swelling, and small and superficial dilated blood vessels ", "output": "Rosacea "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Frequent urination, trouble starting to urinate, weak stream, inability to urinate, loss of bladder control ", "output": "Benign prostatic hyperplasia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Eye pain, blurred vision, red eye, eye discharge, photophobia, corneal ulceration ", "output": "Fungal keratitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Severe headache of rapid onset, vomiting, decreased level of consciousness ", "output": "Subarachnoid hemorrhage "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Shortness of breath, chronic cough ", "output": "Chronic obstructive pulmonary disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Frequent feeling of needing to urinate, incontinence ", "output": "Overactive bladder "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Diarrhea, vomiting, abdominal pain, fever ", "output": "Gastroenteritis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Ear pain, fever, hearing loss ", "output": "Otitis media "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Thick leathery skin, exaggerated skin markings, small bumps, patches, scratch marks, scale ", "output": "Lichen simplex chronicus "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abdominal pain, bone pain, confusion, depression, weakness ", "output": "Hypercalcaemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Headaches, red eyes, blurred vision, photophobia, burning and redness of the eye ", "output": "Uveitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Delayed relaxation of muscles, falls, difficulty swallowing ", "output": "Myotonia congenita "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Vaginal itching, burning with urination, white and thick vaginal discharge, pain with sex, redness around the vagina ", "output": "Vaginal yeast infection "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Respiratory depression, small pupils, unconsciousness ", "output": "Opioid overdose "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Periods of loss of consciousness, abnormal shaking, staring, change in vision, mood changes and/or other cognitive disturbances ", "output": "Epilepsy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Expanding area of redness at the site of a tick bite, fever, headache, tiredness ", "output": "Lyme disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fever, cough, runny nose, inflamed eyes, rash ", "output": "Measles "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Missing collarbone, prominent forehead, flat nose, shorter ", "output": "Cleidocranial dysostosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Itchiness, red skin, rash ", "output": "Dermatitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Variable ", "output": "Seizure "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "fever, cramped-up jaw, muscle spasms, headache, seizures, sweating, and trouble swallowing ", "output": "Tetanus "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Cholestasis, pruritus, fatigue ", "output": "Primary biliary cholangitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain, tooth loss, difficulty eating ", "output": "Tooth decay "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Trouble breathing through the nose, loss of smell, decreased taste, post nasal drip, runny nose ", "output": "Nasal polyp "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Internal : Painless, bright red rectal bleeding External : Pain and swelling around the anus ", "output": "Hemorrhoid "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abdominal pain, bloating, diarrhea, flatulence, nausea ", "output": "Lactose intolerance "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Trouble sleeping, daytime sleepiness, low energy, irritability, depressed mood ", "output": "Insomnia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Vaginal bleeding, pain with urination or sexual intercourse, pelvic pain ", "output": "Endometrial cancer "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Red, raised, itchy bumps ", "output": "Hives "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Itchy and flaking skin of the scalp ", "output": "Dandruff "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Memory loss, problems with language, disorientation, mood swings ", "output": "Alzheimer's disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Eating a large amount of food in a short amount of time followed by vomiting or the use of laxatives, often normal weight ", "output": "Bulimia nervosa "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Decreased ability to exercise, loss of consciousness, shortness of breath, heart related chest pain, leg swelling ", "output": "Aortic stenosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Nausea and vomiting ", "output": "Chronic pancreatitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abdominal pain, fever, nausea, diarrhea, constipation, blood in the stool ", "output": "Diverticulitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Swelling, redness, and pain at the tip of the elbow ", "output": "Olecranon bursitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Unformed stool while traveling, fever, abdominal cramps, headache ", "output": "Travelers' diarrhea "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Increased fat ", "output": "Obesity "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain going down the leg from the lower back, weakness or numbness of the affected leg ", "output": "Sciatica "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Problems with social interaction and nonverbal communication, restricted interests, and repetitive behavior ", "output": "Asperger syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "breathlessness, tiredness ", "output": "Cardiac allograft vasculopathy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Large amounts of dilute urine, increased thirst ", "output": "Diabetes insipidus "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Worsening of symptoms with activity, long-term fatigue, others ", "output": "Myalgic encephalomyelitis/chronic fatigue syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "skin growth usually occurring on the hands, feet, or genitals ", "output": "Wart "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Painless red flat papules on palms and soles. ", "output": "Janeway lesion "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Flaking, dry or greasy, red, itchy, and inflamed skin ", "output": "Seborrhoeic dermatitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Burning pain followed by small blisters or sores ", "output": "Cold sore "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Awareness but an inability to move during waking or falling asleep hallucinations ", "output": "Sleep paralysis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "warts ", "output": "Human papillomavirus infection "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Headache, vomiting, feeling tired, trouble sleeping, dizziness ", "output": "Altitude sickness "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Headaches, nausea, sensitivity to light, sound, and smell ", "output": "Migraine "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Numbness, muscle spasms, seizures, confusion ", "output": "Hypocalcemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abnormally fast heartbeat, palpitations, shortness of breath, lightheadedness, loss of consciousness ", "output": "Wolff\u2013Parkinson\u2013White syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Typically few symptoms ", "output": "Gestational diabetes "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Warm, swollen, painful joints ", "output": "Rheumatoid arthritis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Joint pain, swelling, and redness ", "output": "Gout "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Inhalational form : fever, chest pain, shortness of breath Intestinal form : nausea, vomiting, diarrhea, abdominal pain Injection form : fever, abscess ", "output": "Anthrax "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Loose frequent bowel movements, dehydration ", "output": "Diarrhea "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Poor coordination Stiff or loose muscles Weak muscles Tremors ", "output": "Cerebral palsy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Elevated follicle stimulating hormone (FSH) and loss of menstrual cycles before age 40 ", "output": "Fragile X-associated primary ovarian insufficiency "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Often asymptomatic, but can cause spots in the eye and vision loss. ", "output": "Diabetic retinopathy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fatigue, insomnia, migraines, headache, and dizziness . ", "output": "Essential thrombocythemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Upper abdominal pain, nausea, vomiting, bloating, loss of appetite, heartburn ", "output": "Gastritis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain with urination, frequent urination, feeling the need to urinate despite having an empty bladder ", "output": "Urinary tract infection "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Red eyes, itchy rash, vomiting, runny nose, shortness of breath, swelling, sneezing, and cough. ", "output": "Allergy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pauses breathing or periods of shallow breathing during sleep, snoring, tired during the day ", "output": "Sleep apnea "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Poor ability to tolerate cold, feeling tired, constipation, weight gain, depression, anxiety, irritability ", "output": "Hypothyroidism "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Often asymptomatic, fatigue, right upper abdominal pain, anorexia, nausea, jaundice, joint pain, rash ", "output": "Autoimmune hepatitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Varying degrees muscle weakness, double vision, drooping eyelids, trouble talking, trouble walking ", "output": "Myasthenia gravis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Lightheadedness, palpitations, chest pain ", "output": "Ventricular tachycardia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain in the upper abdomen nausea vomiting fever fatty stool ", "output": "Pancreatitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Flu-like illness, Large lymph nodes, fever, weight loss ", "output": "HIV/AIDS "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Inattention carelessness hyperactivity executive dysfunction disinhibition emotional dysregulation impulsivity impaired working memory, Attention deficit hyperactivity disorder \nFlu-like illness, Large lymph nodes ", "output": "fever"}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain in a specific bone, overlying redness, fever, weakness ", "output": "Osteomyelitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Nonaligned eyes ", "output": "Strabismus "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Vomiting red blood, vomiting black blood, bloody stool, black stool, feeling tired ", "output": "Gastrointestinal bleeding "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Blisters, itch, hives ", "output": "Gestational pemphigoid "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Loss of hair from part of the head or body. ", "output": "Hair loss "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Unpleasant sensory and emotional sensations ", "output": "Pain "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "High blood pressure, poor vision, headaches, muscular weakness, muscle spasms ", "output": "Primary aldosteronism "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fever, multiple painful joints, involuntary muscle movements, erythema marginatum ", "output": "Rheumatic fever "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Diarrhea, abdominal pain, weight loss, nausea ", "output": "Giardiasis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Purple colored skin lesions ", "output": "Kaposi's sarcoma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abdominal pain, weakness, weight loss, darkening of the skin ", "output": "Addison's disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Heat, pain, redness, swelling ", "output": "Inflammation "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "sudden weight loss, altered eating signals ", "output": "Cachexia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Cough, sore throat, runny nose, fever ", "output": "Common cold "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Back pain, joint stiffness ", "output": "Ankylosing spondylitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Usually asymptomatic ", "output": "Vitamin D deficiency "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Palpitations, feeling faint, sweating, shortness of breath, chest pain . ", "output": "Supraventricular tachycardia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Papules, pustules, red skin ", "output": "Perioral dermatitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Shortness of breath, exhaustion, swollen legs ", "output": "Heart failure "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Unpleasant feeling in the legs that briefly improves with moving them ", "output": "Restless legs syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Memory impairment ", "output": "Transient global amnesia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Low mood, aversion to activity, loss of interest, loss of feeling pleasure ", "output": "Depression (mood) "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Small, itchy blisters, headache, loss of appetite, tiredness, fever ", "output": "Chickenpox "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Breaks in the voice making a person difficult to understand ", "output": "Spasmodic dysphonia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Lump or pain in the right side below the rib cage, swelling of the abdomen, yellowish skin, easy bruising, weight loss, weakness ", "output": "Liver cancer "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Large bruises, fever, weakness, shortness of breath, confusion, headache ", "output": "Thrombotic thrombocytopenic purpura "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Burning sensation (rare) ", "output": "Geographic tongue "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Urticaria, angioedema, headache, fatigue, joint pain or swelling, gastrointestinal symptoms flushing, wheezing, and palpitations . ", "output": "Chronic spontaneous urticaria "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Reddish eye, scratchiness ", "output": "Conjunctivitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "difficulty swallowing, heartburn, abdominal pain, food bolus obstruction ", "output": "Lymphocytic esophagitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Anxiety, panic, laboring to breath, tightened neck and chest muscles, difficulty performing normal daily activities ", "output": "Acute severe asthma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "pain, tingling, dull ache, numbness, shooting pain, muscle weakness ", "output": "Nerve compression syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Depends on the organ involved Lungs : wheezing, cough, shortness of breath, chest pain Skin : lumps, ulcers, discolored skin Children : weight loss, bone pain, feeling tired ", "output": "Sarcoidosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "sudden muscle pain and a paralysis-like immobility ", "output": "Cramp "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Vaginal discharge, discharge from the penis, burning with urination ", "output": "Chlamydia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Itching, scaling, redness of the foot ", "output": "Athlete's foot "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Increased startle response to sudden auditory, visual, or tactile stimulation ", "output": "Hyperekplexia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Dry mouth, dry eyes, other areas of dryness ", "output": "Sj\u00f6gren syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Visible hair loss, distress ", "output": "Trichotillomania "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Regular pattern of contraction and extension of the arms and legs, movement of one part of the body, unresponsive ", "output": "Status epilepticus "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Excessive sweating after eating certain foods by individuals with particular nerve damage ", "output": "Gustatory hyperhidrosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Mole that is increasing in size, has irregular edges, change in color, itchiness, or skin breakdown . ", "output": "Melanoma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Severe pain in the lower back or abdomen, blood in the urine, vomiting, nausea ", "output": "Kidney stone disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Typical : episodes of severe, sudden, shock-like pain in one side of the face that lasts for seconds to minutes Atypical : constant burning pain ", "output": "Trigeminal neuralgia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fear of gaining weight, strong desire to be thin, food restrictions, body image disturbance ", "output": "Anorexia nervosa "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Episodes of uncontrollable laughing, crying, or other emotional displays that may not match the patient's mental state ", "output": "Pseudobulbar affect "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Taste of acid, heartburn, bad breath, chest pain, breathing problems ", "output": "Gastroesophageal reflux disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Severe pain, swelling of the abdomen, fever ", "output": "Peritonitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Chest pain ", "output": "Costochondritis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Stuffy itchy nose, sneezing, red, itchy, and watery eyes, swelling around the eyes, itchy ears ", "output": "Allergic rhinitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Weak immune system, mouth ulcers, sore throat, lethargy, high fever and chills ", "output": "Autoimmune neutropenia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain, tingling, tiredness, weakness, numbness or heaviness in the legs, hips, glutes and lower back . ", "output": "Neurogenic claudication "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Localized breast pain and redness, fever ", "output": "Mastitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain in the back of the testicle, swelling of the testicle, burning with urination, frequent urination ", "output": "Epididymitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Itching in the genital area, bad smelling thin vaginal discharge, burning with urination, pain with sex ", "output": "Trichomoniasis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Bone pain, fatigue : 653 ", "output": "Multiple myeloma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Irregular menstrual periods, heavy periods, excess hair, acne, pelvic pain, difficulty getting pregnant, patches of thick, darker, velvety skin ", "output": "Polycystic ovary syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Painful or heavy periods ", "output": "Uterine fibroid "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Progressive dyspnea, cough, fever, cyanosis, tachycardia ", "output": "Pulmonary edema "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Frequent urination, increased thirst, increased hunger, weight loss, blurred vision, fatigue and weakness, Bed-wetting in children who previously didn't wet the bed during the night ", "output": "Type 1 diabetes "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "burning or stabbing pain, pain doesn't end after the shingles subsides. ", "output": "Postherpetic neuralgia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Abdominal pain, diarrhea mixed with blood, weight loss, fever, anemia, dehydration, loss of appetite, fatigue, sores on the skin, urgency to defecate, inability to defecate despite urgency, rectal pain ", "output": "Ulcerative colitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Palpitations, dizziness or lightheadedness, passing out, shortness of breath, chest pain, decreased level of consciousness ", "output": "Arrhythmia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Neck pain, occipital neuralgia, numbness or tingling in the tongue. ", "output": "Neck-tongue syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Difficulty breathing, coughing up mucus, poor growth, fatty stool ", "output": "Cystic fibrosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Ear pain, swelling of the ear canal, decreased hearing, difficulty chewing ", "output": "Otitis externa "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Non-painful lymph nodes swelling, feeling tired, fever, weight loss ", "output": "Chronic lymphocytic leukemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fever, pain, a raised tongue, trouble swallowing, neck swelling ", "output": "Ludwig's angina "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Itch, rash in groin ", "output": "Tinea cruris "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Heartburn, upper abdominal pain, nausea, belching, vomiting, blood in the stool, weight loss, weight gain, bloating, loss of appetite, yellowing of the skin and whites of the eyes, difficulty swallowing ", "output": "Peptic ulcer disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Swelling, pain, sensitivity, and/or limited range of motion ", "output": "Tenosynovial giant cell tumor "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Inability to move or feel on one side of the body, problems understanding or speaking, dizziness, loss of vision to one side ", "output": "Stroke "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain with sex, vaginal itchiness or dryness, an urge to urinate ", "output": "Atrophic vaginitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Non specific, feeling tired, abdominal pain, nausea, Yellowish skin, blood clotting problems, confusion ", "output": "Paracetamol poisoning "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Enlarged lymph nodes, fever, night sweats, weight loss, tiredness, itching ", "output": "Non-Hodgkin lymphoma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "heart palpitations, fainting, shortness of breath, chest pain ", "output": "Atrial fibrillation "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Feeling tired, weakness, shortness of breath, confusion, pallor ", "output": "Iron-deficiency anemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "hypocalcemia ", "output": "Hypoparathyroidism "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Poor feeding, bloating, decreased activity, vomiting of bile ", "output": "Necrotizing enterocolitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fever, runny nose, sore throat, muscle pain, headache, coughing, fatigue ", "output": "Influenza "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "bleeding more than usual ", "output": "Heavy menstrual bleeding "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Recurrent attacks of severe swelling ", "output": "Hereditary angioedema "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "crampy pain in the right upper abdomen ", "output": "Gallstone "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Itchy, red, swollen, cracked skin ", "output": "Atopic dermatitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Prolonged bleeding from common injuries ", "output": "Haemophilia A "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Peripheral sensory neuropathy ", "output": "Megavitamin-B6 syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fever, flank tenderness, nausea, burning with urination, frequent urination ", "output": "Pyelonephritis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "pale skin, fatigue, fast heart rate, rash, dizziness, headache, frequent or prolonged infections, nosebleeds, bleeding gums, prolonged bleeding from cuts, unexplained or easy bruising, hematoma ", "output": "Aplastic anemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Red skin, burning sensation, desquamation, itchiness ", "output": "Topical steroid withdrawal "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Initially nonspecific, headaches, personality changes, nausea, symptoms similar to a stroke ", "output": "Glioblastoma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Extreme sadness, low energy, anxiety, changes in sleeping or eating patterns, crying episodes, irritability ", "output": "Postpartum depression "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Agitation, confusion, drowsiness, hallucinations, delusions, memory problems ", "output": "Delirium "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Nausea, vomiting, cold sweat, increased salivation ", "output": "Motion sickness "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Lump in the testicle, swelling or pain in the scrotum ", "output": "Testicular cancer "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Rashes and blisters on the skin, could be painful to the touch with a possibility of acantholysis, erythema and hyperkeratosis. ", "output": "Hailey\u2013Hailey disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Irregular, abnormally frequent, prolonged, or excessive amounts of uterine bleeding ", "output": "Abnormal uterine bleeding "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Disturbing thoughts, feelings, or dreams related to the event; mental or physical distress to trauma-related cues; efforts to avoid trauma-related situations; increased fight-or-flight response ", "output": "Post-traumatic stress disorder "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "dry eyes, dry mouth, ha\u00efr lost, joint inflammation, joint pain, mouth ulcers, positive ANA test, raynaud's phenomenon, sun-sensitive rash, ... ", "output": "Undifferentiated connective tissue disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Blood in stool Weight loss Nausea Vomiting Diarrhea Stomach pain ", "output": "Bloating "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Feeling like the world is spinning, ringing in the ears, hearing loss, fullness in the ear ", "output": "M\u00e9ni\u00e8re's disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Infrequent or hard to pass bowel movements, abdominal pain, bloating ", "output": "Constipation "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Joint pain, stiffness, joint swelling, decreased range of motion ", "output": "Osteoarthritis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Painful fatty tumors in extremities ", "output": "Dercum's disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Chest pain, shortness of breath ", "output": "Coronary artery disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "yellowish skin, tiredness, dark urine, abdominal pain ", "output": "Hepatitis B "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pale skin, fatigue, fast heart rate, rash, dizziness, headache, frequent or prolonged infections, nosebleeds, bleeding gums, prolonged bleeding from cuts, unexplained or easy bruising, hematoma ", "output": "Aplastic anemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Small bumps in skin of genital area, varying sizes and shapes but typically protrude out, burning, itch ", "output": "Genital wart "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Shortness of breath on vigorous exercise ", "output": "Exercise-induced bronchoconstriction "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Red, itchy, scaly, circular skin rash ", "output": "Dermatophytosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Redness, pain, swelling ", "output": "Abscess "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Red, swollen, painful, bleeding gums, loose teeth, bad breath ", "output": "Periodontal disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Distress related to one's assigned gender, sex, and/or sex characteristics ", "output": "Gender dysphoria "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Sore throat, fever, runny nose, cough, headache, hoarse voice ", "output": "Pharyngitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Bloody diarrhea, abdominal pain ", "output": "Amoebiasis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Headache, vision problems, ringing in the ears with the heartbeat ", "output": "Idiopathic intracranial hypertension "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Anxiety, shakiness, sweating, vomiting, fast heart rate, mild fever ", "output": "Alcohol withdrawal syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Attacks of pain, anemia, swelling in the hands and feet, bacterial infections, stroke ", "output": "Sickle cell disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain with sex ", "output": "Vaginismus "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "White or yellow nail discoloration, thickening of the nail ", "output": "Onychomycosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Swelling, weight gain, feeling tired, foamy urine ", "output": "Nephrotic syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Anhidrosis or hyperhidrosis, blurry vision, tunnel vision, orthostatic hypotension, constipation, diarrhea, dysphagia, bowel incontinence, urinary retention or urinary incontinence, dizziness, Brain Fog, exercise intolerance, tachycardia, vertigo, weakness and pruritus . ", "output": "Dysautonomia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Diarrhea; fever; abdominal pain, abdominal bloating; nutrient deficiencies ", "output": "Enteritis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "crusty eyelids ", "output": "Blepharitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Cardiac arrest with loss of consciousness and no pulse ", "output": "Ventricular fibrillation "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain, allodynia, hypo - or hyperesthesia, skin temperature abnormalities, atrophy, stiffness ", "output": "Complex regional pain syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Decreased ability to think, feeling tired, depression, irritability, abnormal sensations, changes in reflexes ", "output": "Vitamin B12 deficiency "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Sudden onset : Inability to urinate, low abdominal pain Long term : Frequent urination, loss of bladder control, urinary tract infection ", "output": "Urinary retention "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Severe pain, fever, purple colored skin in the affected area ", "output": "Necrotizing fasciitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Can include memory impairments (amnestic) or cognitive problems like impaired decision making, language, or visuospatial skills (non-amnestic) ", "output": "Mild cognitive impairment "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain, swelling, redness, enlarged veins in the affected limb ", "output": "Deep vein thrombosis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Tremor, poor coordination, nystagmus, seizures ", "output": "Magnesium deficiency "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Diarrhea, constipation, abdominal pain ", "output": "Irritable bowel syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Joint pain, stiffness, redness, swelling, decreased range of motion ", "output": "Arthritis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Shooting pain, numbness, tingling, tremors, bladder problems, unsteadiness ", "output": "Peripheral neuropathy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Chest pain, shortness of breath, fatigue, loss of consciousness ", "output": "Cardiovascular disease "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "burning with urination, vaginal discharge, discharge from the penis, pelvic pain, testicular pain ", "output": "Gonorrhea "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Obesity ", "output": "Metabolic syndrome "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Nasal congestion ", "output": "Rhinitis medicamentosa "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Coughing up mucus, wheezing, shortness of breath, chest discomfort ", "output": "Bronchitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain lasts longer than the expected period of recovery. ", "output": "Chronic pain "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Bleeding, bruising, fatigue, fever, increased risk of infections ", "output": "Leukemia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Fever, sore throat, enlarged lymph nodes ", "output": "Streptococcal pharyngitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "bloating, lower abdominal pain, lower back pain ", "output": "Ovarian cyst "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Painful and swollen joints, fever, chest pain, hair loss, mouth ulcers, swollen lymph nodes, feeling tired, red rash ", "output": "Lupus "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "clear, colourless liquid draining from nose ", "output": "Cerebrospinal fluid rhinorrhoea "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Red (purple on darker skin), itchy, scaly patches of skin ", "output": "Psoriasis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Pain especially with coughing, bulging area ", "output": "Hernia "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Hard lump with a scaly top or ulceration . ", "output": "Cutaneous squamous-cell carcinoma "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "pain, bad breath, fever, bleeding gums ", "output": "Necrotizing gingivitis "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Missed periods, tender breasts, nausea and vomiting, hunger, frequent urination ", "output": "Pregnancy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Strong desire to use opioids, increased tolerance to opioids, failure to meet obligations, trouble with reducing use, withdrawal syndrome with discontinuation ", "output": "Opioid use disorder "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Albuminuria, peripheral edema, high blood pressure, tiredness ", "output": "Diabetic nephropathy "}
+{"instruction": "Given the following symptoms, predict the illness.", "input": "Hemorrhaging, hematuria, dysuria ", "output": "Hemorrhagic cystitis "}

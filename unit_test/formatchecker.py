@@ -6,7 +6,7 @@ class ValidationError(Exception):
     pass
 
 def validate_jsonl():
-    directory_path = "/home/jkwade/Code/CareConnect/data/processed_data/jsonl"
+    directory_path = "CareConnect/data/processed_data/jsonl"
 
     # List files in the directory
     try:

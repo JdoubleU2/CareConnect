@@ -31,22 +31,18 @@ def validate_jsonl():
                     if not required_keys.issubset(data.keys()):
                         raise ValidationError(f"File {file_path} Line {line_num}: Missing required keys.")
                         
-
                     # Validate instruction format
                     if not isinstance(data["instruction"], str) or not data["instruction"]:
                         raise ValidationError(f"File {file_path} Line {line_num}: Incorrect instruction text. Instruction should be a non-empty string.")
                         
-
                     # Validate input format (comma-separated symptoms)
                     if not isinstance(data["input"], str) or not data["input"]:
-                        raise ValidationError("File {file_path} Line {line_num}: Incorrect input text. Input should be a non-empty string.")
+                        raise ValidationError(f"File {file_path} Line {line_num}: Incorrect input text. Input should be a non-empty string.")
                         
-
                     # Validate output format (disease name)
                     if not isinstance(data["output"], str) or not data["output"].strip():
                         raise ValidationError(f"File {file_path} Line {line_num}: Incorrect output text. Output should be a non-empty string.")
                         
-
                 except json.JSONDecodeError:
                     raise ValidationError(f"File {file_path} Line {line_num}: Invalid JSON format.")
 

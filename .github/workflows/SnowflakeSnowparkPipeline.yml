@@ -27,7 +27,7 @@ jobs:
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
           SNOWFLAKE_STAGE: ${{ secrets.SNOWFLAKE_STAGE }}
         run: |
-          python upload_data.py
+          python .github/workflows/upload_data.py
 
       - name: Run Jupyter Notebook on Snowflake Snowpark GPU
         env:
@@ -38,4 +38,4 @@ jobs:
           SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
         run: |
-          python run_notebook.py
+          python .github/workflows/run_finetune.py

@@ -26,7 +26,7 @@ data_dir = "data/processed_data"
 for file in os.listdir(data_dir):
     file_path = f"{data_dir}/{file}"
     print(f"Uploading {file_path} to {stage}")
-    cursor.execute(f"PUT file://{file_path} @{stage} OVERWRITE=TRUE"")
+    cursor.execute(f"PUT file://{file_path} @{stage} OVERWRITE=TRUE")
 
 print(f"✅ Uploaded {file_path} to @{stage} successfully!")
 

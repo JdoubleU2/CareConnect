@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - snowflake-CI/CD
   workflow_dispatch:  # Allows manual triggering
 
 jobs:

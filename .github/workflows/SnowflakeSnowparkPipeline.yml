@@ -26,6 +26,7 @@ jobs:
           SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
           SNOWFLAKE_STAGE: ${{ secrets.SNOWFLAKE_STAGE }}
+          
         run: |
           python .github/workflows/upload_data.py
 

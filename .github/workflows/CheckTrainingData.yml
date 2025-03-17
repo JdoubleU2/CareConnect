@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - snowflake-CI/CD
 
   pull_request:
     branches:

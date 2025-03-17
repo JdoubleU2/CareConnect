@@ -1,0 +1,44 @@
+name: Snowflake Snowpark CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allows manual triggering
+  pull_request:
+    branches:
+      - main
+jobs:
+  deploy-to-snowflake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+
+      - name: Install Snowflake CLI
+        run: pip install snowflake-connector-python snowflake-snowpark-python
+
+      - name: install git lfs
+        run: git lfs install
+
+
+      - name: Pull Git LFS files
+        run: |
+          git lfs pull  # Pulls the actual files stored with LFS
+
+      - name: Upload Data to Snowflake Stage
+        env:
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_STAGE: ${{ secrets.SNOWFLAKE_STAGE }}
+          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA}}
+          
+        run: |
+          python .github/workflows/upload_data.py
+

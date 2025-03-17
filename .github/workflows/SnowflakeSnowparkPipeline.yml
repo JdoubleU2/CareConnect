@@ -6,7 +6,9 @@ on:
       - main
       - snowflake-CI/CD
   workflow_dispatch:  # Allows manual triggering
-
+  pull_request:
+    branches:
+      - main
 jobs:
   deploy-to-snowflake:
     runs-on: ubuntu-latest

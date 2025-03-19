@@ -8,6 +8,7 @@ connection_params = {
     "account": os.getenv("SNOWFLAKE_ACCOUNT"),
     "warehouse": os.getenv("SNOWFLAKE_WAREHOUSE"),
     "database": os.getenv("SNOWFLAKE_DATABASE"),
+    "stage": os.getenv("SNOWFLAKE_STAGE"),
     "schema": os.getenv("SNOWFLAKE_SCHEMA"),  # Ensure schema is set
 }
 
@@ -20,7 +21,7 @@ cursor.execute(f"USE DATABASE {connection_params['database']}")
 cursor.execute(f"USE SCHEMA {connection_params['schema']}")  # 🔹 Fixes "No schema" error
 
 # Define stage and file to upload
-stage = "CARECONNECT_TRAINING_DATA_STAGE"  
+stage = connection_params["stage"]  
 data_dir = "data/processed_data"
 
 for file in os.listdir(data_dir):

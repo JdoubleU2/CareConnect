@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  format_check:
+  format-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository

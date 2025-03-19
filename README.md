@@ -1,8 +1,10 @@
 # CareConnect
 Developer Repository for the Software Surgeons' 'CareConnect' project
 
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/JdoubleU2/CareConnect)](https://github.com/JdoubleU2/CareConnect/pulls)
 [![Tests Passing](https://github.com/JdoubleU2/CareConnect/workflows/Snowflake%20Snowpark%20CI/CD%20Prod/badge.svg)](https://github.com/JdoubleU2/CareConnect/actions)
 [![GitHub Contributors](https://img.shields.io/github/contributors/JdoubleU2/CareConnect)](https://github.com/JdoubleU2/CareConnect/graphs/contributors)
+[![GitHub Stars](https://img.shields.io/github/stars/JdoubleU2/CareConnect?style=social)](https://github.com/JdoubleU2/CareConnect/stargazers)
 
 ## 📌 Table of Contents  
 - [Overview](#overview)  

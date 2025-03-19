@@ -62,9 +62,14 @@ This project is licensed under [MIT License](LICENSE).
 ## 📞 Contact  
 For questions or collaborations, reach out:  
 📧 Email: Team lead & LLM Training Lead: Jabin Wade [Jwade23@pvamu.edu](mailto:Jwade23@pvamu.edu)
+<<<<<<< HEAD
 
 📧 Email: Lead Data Engineer: [jnelson50@pvamu.edu](mailto:jnelson50@pvamu.edu) 
 
 📧 Email: Lead Web Developer:[alister3@pvamu.edu](mailto:alister3@pvamu.edu)  
 
+=======
+📧 Email: Lead Data Engineer: [jnelson50@pvamu.edu](mailto:jnelson50@pvamu.edu) 
+📧 Email: Lead Web Developer:[alister3@pvamu.edu](mailto:alister3@pvamu.edu)  
+>>>>>>> b5a8b3c (Update README.md (#27))
 📧 Email: [llittlejohn@pvamu.EDU](mailto:llittlejohn@PVAMU.EDU)  

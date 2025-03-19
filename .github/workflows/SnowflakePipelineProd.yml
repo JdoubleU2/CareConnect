@@ -32,11 +32,7 @@ jobs:
 
   deploy-to-snowflake:
     runs-on: ubuntu-latest
-<<<<<<< HEAD
     needs: format-check  
-=======
-    needs: format_check  
->>>>>>> e604a97 (Snowflake CI/CD (#21))
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3

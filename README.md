@@ -15,11 +15,7 @@ Developer Repository for the Software Surgeons' 'CareConnect' project
 - [Contact](#contact)  
 
 ## 🚀 Overview  
-CareConnect is an AI-powered health chatbot developed by The Software Surgeons and sponsored by Google.  
-
-It provides **general health advice, treatment suggestions, and medical facility recommendations**.  
-
-The chatbot leverages **LLM-based medical insights** while ensuring responsible AI usage.
+CareConnect is an AI-powered health chatbot developed by The Software Surgeons and sponsored by Google. It provides **general health advice, treatment suggestions, and medical facility recommendations**. The chatbot leverages **LLM-based medical insights** while ensuring responsible AI usage.
 
 ## 🤖 CareConnect Model on Hugging Face  
 The latest CareConnect model is hosted on **Hugging Face**. You can pull and run it using `ollama`.  

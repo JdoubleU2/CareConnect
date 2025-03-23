@@ -5,8 +5,8 @@ import snowflake.connector
 import os
 
 
-filepath = "/Users/jabinwade/Coding/CareConnect/data/processed_data/"
-output_file = "/Users/jabinwade/Coding/CareConnect/data/gemma3_processed_data/processed_data.jsonl"
+filepath = ""
+output_file = ""
 
 gemma_examples = []
 for file in os.listdir(filepath):

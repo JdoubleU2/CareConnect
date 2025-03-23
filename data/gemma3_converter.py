@@ -54,13 +54,13 @@ print(f"Output saved to {output_file}")
 
 
 connection_params = {
-    "user": "JWADE",
-    "password": "5hyxHhRBNFm44b9",
-    "account": "IWB26166",
-    "warehouse": "SOFTWARESURGEONS",
-    "database": "SOFTWARESURGEONS_DB",
-    "stage": "CARECONNECT_GEMMA3_TRAINING_DATA",
-    "schema": "GIT",  # Ensure schema is set
+    "user": "",
+    "password": "",
+    "account": "",
+    "warehouse": "",
+    "database": "",
+    "stage": "",
+    "schema": "",  # Ensure schema is set
 }
 
 # Establish a connection

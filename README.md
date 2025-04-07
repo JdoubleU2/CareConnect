@@ -63,6 +63,6 @@ For questions or collaborations, reach out:
 
 📧 Email: Lead Data Engineer: Zero Nelson [jnelson50@pvamu.edu](mailto:jnelson50@pvamu.edu) 
 
-📧 Email: Lead Web Developer: Aubrey Lister [alister3@pvamu.edu](mailto:alister3@pvamu.edu)  
+📧 Email: Lead Web Developer: Aubrey Lister [alister3@pvamu.edu](mailto:alister4@pvamu.edu)  
 
 📧 Email: Lindsey Littlejohn [llittlejohn@pvamu.EDU](mailto:llittlejohn@PVAMU.EDU)  

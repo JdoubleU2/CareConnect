@@ -21,7 +21,7 @@ cursor.execute(f"USE SCHEMA {connection_params['schema']}")  # 🔹 Fixes "No sc
 
 # Define stage and file to upload
 stage = "CARECONNECT_TRAINING_DATA_STAGE"  
-data_dir = "data/processed_data"
+data_dir = "data"
 
 for file in os.listdir(data_dir):
     file_path = f"{data_dir}/{file}"

@@ -6,7 +6,7 @@ class ValidationError(Exception):
     pass
 
 def validate_jsonl():
-    directory_path = "data/processed_data"
+    directory_path = "data/"
 
     # List files in the directory
     try:

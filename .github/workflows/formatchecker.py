@@ -31,8 +31,8 @@ def validate_jsonl():
                             raise ValidationError(f"{file_path} Line {line_num}: Missing required keys.")
 
                         # Validate instruction format
-                        if not isinstance(data["instruction"], str) or not data["instruction"].strip():
-                            raise ValidationError(f"{file_path} Line {line_num}: Invalid instruction (must be non-empty string).")
+                        if not isinstance(data["input"], str):
+                            raise ValidationError(f"{file_path} Line {line_num}: Invalid input (must be a string).")
 
                         # Validate input format
                         if not isinstance(data["input"], str) or not data["input"].strip():

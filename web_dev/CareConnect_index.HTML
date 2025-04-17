@@ -5,51 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Care Connect</title>
     <style>
+        /* General styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            margin-bottom: 1px;
             background-color: #f5f5f5;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
         }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #f5f5f5;
+        }
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color:#588157;
+            background-color: #588157;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .navbar a {
+
+        .navbar.dark-mode {
+            background-color: #444;
+        }
+
+        .navbar a, .navbar button {
             text-decoration: none;
             color: white;
             margin: 0 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
-        .navbar .sign-up {
-            background-color: #588157; /* Forest green background */
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+
+        .navbar a:hover, .navbar button:hover {
+            color: #A3B18A;
         }
+
         .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 50px 20px;
         }
+
         .text-section {
             max-width: 50%;
         }
+
         .text-section h1 {
             font-size: 36px;
             margin-bottom: 20px;
         }
+
         .text-section p {
             font-size: 18px;
             margin-bottom: 20px;
         }
+
         .text-section .sign-up-btn {
-            background-color: #A3B18A; /* Forest green background */
+            background-color: #A3B18A;
             color: white;
             padding: 15px 30px;
             border: none;
@@ -57,79 +77,64 @@
             font-size: 18px;
             cursor: pointer;
         }
+
         .image-section img {
             max-width: 90%;
             border-radius: 10px;
         }
+
         .blue-strip {
-            background-color:#6EC1E4 ; 
+            background-color: #6EC1E4;
             padding: 20px;
             text-align: center;
         }
-        .blue-strip h2 {
-            color: white;
+
+        .blue-strip.dark-mode {
+            background-color: #005f87;
         }
-        .blue-strip p {
-            color: white;
-        }
-        .blue-strip .icon {
-            width: 100px; /* Match the width of the .card */
-            height: 100px; /* Match the height of the .card */
-            object-fit: cover;
-        }
-        .icon-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            background-color:  #6EC1E4;
-            padding: 0px;
-        }
-        .green-block {
-            background-color: #f5f5f5; /* Match this to the background color of the entire website */
-            padding: 20px;
-            margin-top: 20px;
-        }
+
         .template-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             justify-content: space-around;
         }
+
         .template-cards .card {
-            background-color: #A3B18A; /* New background color for theme cards */
+            background-color: #A3B18A;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
-            color: #588157; /* Forest green text */
+            color: #588157;
         }
-        .template-cards .card a {
-            color: #588157; /* Forest green text */
-            text-decoration: underline;
+
+        .template-cards .card.dark-mode {
+            background-color: #444;
+            color: #f5f5f5;
         }
 
         .footer {
-            background-color: #588157; /* Forest green background */
+            background-color: #588157;
             color: white;
             text-align: center;
-            padding: 10px; 
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 10px;
         }
+
+        .footer.dark-mode {
+            background-color: #444;
+        }
+
         .testimonial-section {
             background-color: #f5f5f5;
             padding: 50px 20px;
             text-align: center;
         }
-        .testimonial-section h2 {
-            font-size: 30px;
-            margin-bottom: 20px;
+
+        .testimonial-section.dark-mode {
+            background-color: #333;
         }
-        .testimonial-section p {
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
+
         .testimonial {
             display: flex;
             justify-content: center;
@@ -141,24 +146,15 @@
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
+        .testimonial.dark-mode {
+            background-color: #444;
+        }
+
         .testimonial img {
             max-width: 100px;
             margin-right: 20px;
             border-radius: 50%;
-        }
-        .testimonial .content {
-            text-align: left;
-        }
-        .testimonial .content h3 {
-            margin: 0 0 10px;
-        }
-        .testimonial .content p {
-            margin: 0;
-            font-size: 16px;
-            color: #666;
-        }
-        .testimonial .content .author {
-            font-weight: bold;
         }
     </style>
 </head>
@@ -168,17 +164,18 @@
             <img src="CareConnectImages/CareConnectLogo.png" alt="Care Connect Logo" style="height: 70px;">
         </div>
         <div class="nav-links">
-            <a href="#" class="Sign-up">Sign up</a>
+            <a href="#">Sign up</a>
             <a href="#">Features</a>
             <a href="#">About Us</a>
             <a href="#">Meet the Team</a>
         </div>
+        <button id="darkModeToggle">Dark Mode</button>
     </div>
     <div class="container">
         <div class="text-section">
             <h1>Care Connect an AI Health Chatbot</h1>
             <h2>Revolutionize your health with Care Connect, the health bot assistant that swiftly identifies your health concerns.</h2>
-            <p>Get reliable medical information and guidance from our AI assistant. Remeber, this is not a replacement for professional medical advice.<p>
+            <p>Get reliable medical information and guidance from our AI assistant. Remember, this is not a replacement for professional medical advice.</p>
             <button class="sign-up-btn">Sign up today</button>
         </div>
         <div class="image-section">
@@ -188,48 +185,22 @@
     <div class="blue-strip">
         <h2>The Intelligent Health Chatbot</h2>
         <p>As endorsed by top healthcare professionals</p>
-        <div class="icon-container">
-            <img src="CareConnectImages/CareConnectIcon1.png" alt="Care-Connect icon 1" class="icon">
-            <img src="CareConnectImages/CareConnectIcon2.png" alt="Care-Connect icon 2" class="icon">
-            <img src="CareConnectImages/CareConnectIcon3.png" alt="Care-Connect icon 3" class="icon">
-            <img src="CareConnectImages/CareConnectIcon4.png" alt="Care-Connect icon 4" class="icon">
-        </div>
     </div>
-    <div class="green-block">
-        <div class="Health Chatbot">
+    <div class="template-cards">
+        <div class="card">
+            <h3>Professional Guidance</h3>
+            <p>Get clear explanations and understand when to seek professional help.</p>
+            <a href="#">Learn more</a>
         </div>
-        <div class="template-cards">
-            <div class="card">
-                <h3>Professional Guidance</h3>
-                <p>Get clear explanations and understand when to seek professional help.</p>
-                <a href="#">Learn more</a>
-            </div>
-            <div class="card">
-                <h3>Medical Information</h3>
-                <p>Access reliable medical information and explanations of medical terms.</p>
-                <a href="#">Learn more</a>
-            </div>
-            <div class="card">
-                <h3>Uhh</h3>
-                <p>Worry less with our highly accurate results.</p>
-            <6>Not completely accurate</6>
-                <a href="#">Learn more</a>
-            </div>
-            <div class="card">
-                <h3>Sustainable Tips</h3>
-                <p>Receive daily tips.</p>
-                <a href="#">Learn more</a>
-            </div>
-            <div class="card">
-                <h3>Local Health Insights</h3>
-                <p>Gain insights for .</p>
-                <a href="#">Learn more</a>
-            </div>
-            <div class="card">
-                <h3>Instant Analysis</h3>
-                <p>Quickly determine with AI.</p>
-                <a href="#">Learn more</a>
-            </div>
+        <div class="card">
+            <h3>Medical Information</h3>
+            <p>Access reliable medical information and explanations of medical terms.</p>
+            <a href="#">Learn more</a>
+        </div>
+        <div class="card">
+            <h3>Uhh</h3>
+            <p>Worry less with our highly accurate results.</p>
+            <a href="#">Learn more</a>
         </div>
     </div>
     <div class="testimonial-section">
@@ -245,7 +216,35 @@
         </div>
     </div>
     <div class="footer">
-        <h2>The #1 Intelligent health Chatbot</h2>
+        <h2>The #1 Intelligent Health Chatbot</h2>
         <p>As endorsed by top ...</p>
         <h6>*Not a factual claim (currently).</h6>
     </div>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const cards = document.querySelectorAll('.template-cards .card');
+        const testimonialSection = document.querySelector('.testimonial-section');
+
+        // Check and apply saved preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            cards.forEach(card => card.classList.add('dark-mode'));
+            testimonialSection.classList.add('dark-mode');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            cards.forEach(card => card.classList.toggle('dark-mode'));
+            testimonialSection.classList.toggle('dark-mode');
+
+            // Save user preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.removeItem('darkMode');
+            }
+        });
+    </script>
+</body>
+</html>

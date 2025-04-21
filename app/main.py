@@ -46,11 +46,7 @@ async def log_requests(request: Request, call_next):
 # --- Hugging Face LLM Setup ---
 try:
     llm = HuggingFaceEndpoint(
-        repo_id="JdoubleU/careconnect-llama3.2-3b",
-        temperature=0.7,
-        task='text-generation',
-        max_new_tokens=1000,
-        huggingfacehub_api_token=os.getenv("HUGGINGFACE_API_KEY")
+        endpoint_url="https://l3w62k457vzkn0yj.us-east4.gcp.endpoints.huggingface.cloud",
     )
     logger.info("✅ HuggingFace LLM initialized successfully")
 except Exception as e:

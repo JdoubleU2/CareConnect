@@ -1,0 +1,9 @@
+langchain
+langchain-community
+langserve
+fastapi
+uvicorn
+transformers
+huggingface_hub
+sse_starlette                                                                                                                                                                    
+langchain_huggingface

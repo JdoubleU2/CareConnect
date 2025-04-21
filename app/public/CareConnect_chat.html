@@ -330,7 +330,7 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
             try {
-                const response = await fetch('http://localhost:8080/llm/invoke', {
+                const response = await fetch('https://careconnect-backend-387872558831.us-central1.run.app/llm/invoke', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ input })

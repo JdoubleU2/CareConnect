@@ -1,9 +1,0 @@
-langchain
-langchain-community
-langserve
-fastapi
-uvicorn
-transformers
-huggingface_hub
-sse_starlette
-uvicorn                                                                                                                                                                    

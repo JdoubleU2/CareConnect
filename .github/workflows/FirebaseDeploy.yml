@@ -19,20 +19,19 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.12'
+        python-version: '3.11'
     
-    - name: Install app dependencies
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r app/requirements.txt
-
-    - name: Install script dependencies
-      run: |
-        pip install -r .github/scripts/requirements.txt
+        pip install -r requirements.txt
+        pip install requests openai
     
     - name: Run tests
+      env:
+        HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
       run: |
-        PYTHONPATH=$PYTHONPATH:$(pwd) pytest .github/scripts/test_main.py -v
+        python .github/scripts/test_server.py
 
   deploy:
     needs: test

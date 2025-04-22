@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, status # Import status
+from fastapi import FastAPI, Request, status, HTTPException # Import status
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from langchain_huggingface import HuggingFaceEndpoint
@@ -88,17 +88,19 @@ async def invoke_llm(input_data: LLMInput):
         if processed_response.lower().startswith("assistant:"):
              processed_response = processed_response[len("assistant:"):].strip()
 
-
         logger.info(f"Processed LLM response: {processed_response}")
 
         return {"output": processed_response}
 
     except Exception as e:
         logger.error(f"❌ Error in LLM invocation: {str(e)}")
-        # Return a 500 Internal Server Error for LLM processing errors
-        # Use status.HTTP_500_INTERNAL_SERVER_ERROR from fastapi.status
-        return {"error": "Failed to get response from AI", "detail": str(e)}, status.HTTP_500_INTERNAL_SERVER_ERROR
-
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail={
+                "error": "Failed to get response from AI",
+                "detail": str(e)
+            }
+        )
 
 # --- Health Check ---
 @app.get("/health")

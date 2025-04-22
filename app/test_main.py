@@ -85,8 +85,6 @@ async def test_llm_invoke_error(mock_llm):
     assert response.status_code == 500, "Error should return 500 status code"
     data = response.json()
     assert "detail" in data, "Error response should include 'detail' field"
-    assert "error" in data["detail"], "Error detail should include 'error' field"
-    assert "detail" in data["detail"], "Error detail should include 'detail' field"
     assert data["detail"]["error"] == "Failed to get response from AI", "Error message should match expected"
     assert data["detail"]["detail"] == error_message, "Error detail should match the exception message"
     logger.info("✅ LLM error test passed!")

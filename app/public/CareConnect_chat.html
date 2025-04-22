@@ -4,74 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareConnect Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* General styles */
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --gradient-start: #2ecc71;
+            --gradient-end: #3498db;
+            --text-color: #2c3e50;
+            --light-bg: #ecf0f1;
+            --dark-bg: #2c3e50;
+            --dark-card: #34495e;
+            --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-color);
             height: 100vh;
             display: flex;
             flex-direction: column;
-            transition: background-color 0.3s, color 0.3s;
+            transition: var(--transition);
         }
 
         body.dark-mode {
-            background-color: #333;
-            color: #f5f5f5;
+            background-color: var(--dark-bg);
+            color: #fff;
         }
 
-        /* Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
-            background-color: #588157;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
         }
 
         .navbar.dark-mode {
-            background-color: #444;
+            background: rgba(44, 62, 80, 0.95);
         }
 
-        .navbar a, .navbar button {
+        .navbar a {
             text-decoration: none;
-            color: white;
+            color: var(--text-color);
             margin: 0 15px;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             padding: 8px 16px;
-            border-radius: 6px;
+            border-radius: 50px;
+            position: relative;
         }
 
-        .navbar a:hover, .navbar button:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+        .navbar a:hover {
+            color: var(--primary-color);
+        }
+
+        .dark-mode .navbar a {
             color: #fff;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .logo img {
             height: 50px;
-            transition: transform 0.3s ease;
+            transition: var(--transition);
         }
 
         .logo img:hover {
             transform: scale(1.05);
         }
 
-        /* Chat container */
         .chat-container {
             flex: 1;
             display: flex;
@@ -79,134 +94,137 @@
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
-            padding: 20px;
+            padding: 10px;
             box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-top: 10px;
         }
 
-        /* Chat messages */
+        .dark-mode .chat-container {
+            background: rgba(44, 62, 80, 0.5);
+        }
+
         .chat-messages {
             flex: 1;
             overflow-y: auto;
-            padding: 20px;
+            padding: 10px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 10px;
         }
 
         .message {
             max-width: 80%;
-            padding: 15px 20px;
-            border-radius: 12px;
-            margin-bottom: 15px;
+            padding: 0.8rem 1.2rem;
+            border-radius: 15px;
+            margin-bottom: 8px;
             animation: fadeIn 0.3s ease-in-out;
             white-space: pre-wrap;
-            line-height: 1.6;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            line-height: 1.4;
+            box-shadow: var(--card-shadow);
         }
 
         .user-message {
-            background-color: #588157;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             color: white;
             align-self: flex-end;
-            border-bottom-right-radius: 4px;
+            border-bottom-right-radius: 5px;
             margin-left: 20%;
+            margin-right: 5px;
         }
 
         .assistant-message {
-            background-color: #f8f9fa;
-            color: #333;
+            background: white;
+            color: var(--text-color);
             align-self: flex-start;
-            border-bottom-left-radius: 4px;
+            border-bottom-left-radius: 5px;
             margin-right: 20%;
-            font-size: 16px;
+            margin-left: 5px;
+            font-size: 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .dark-mode .assistant-message {
-            background-color: #2d2d2d;
-            color: #f5f5f5;
+            background: var(--dark-card);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .assistant-message p {
-            margin: 8px 0;
-        }
-
-        .assistant-message ul, .assistant-message ol {
-            margin: 8px 0;
-            padding-left: 20px;
-        }
-
-        .assistant-message li {
-            margin: 4px 0;
-        }
-
-        /* Input area */
         .input-area {
-            padding: 20px 30px;
-            background-color: white;
-            border-top: 1px solid #e0e0e0;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
             display: flex;
-            gap: 15px;
+            gap: 10px;
             align-items: flex-end;
+            transition: var(--transition);
+            border-radius: 0 0 20px 20px;
+        }
+
+        .dark-mode .input-area {
+            background: rgba(44, 62, 80, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         textarea {
             flex: 1;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
+            padding: 12px;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
             resize: none;
-            font-size: 16px;
-            min-height: 50px;
+            font-size: 15px;
+            min-height: 45px;
             max-height: 200px;
-            background-color: #fff;
-            color: #333;
-            transition: border-color 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            background: white;
+            color: var(--text-color);
+            transition: var(--transition);
         }
 
         textarea:focus {
             outline: none;
-            border-color: #588157;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
         }
 
         .dark-mode textarea {
-            background-color: #2d2d2d;
-            color: #f5f5f5;
-            border-color: #444;
+            background: var(--dark-card);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
         button#sendButton {
-            padding: 15px 30px;
-            background-color: #588157;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 50px;
             cursor: pointer;
             font-size: 16px;
             font-weight: 500;
-            transition: all 0.3s ease;
-            height: 54px;
+            transition: var(--transition);
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         button#sendButton:hover {
-            background-color: #3a5a40;
-            transform: translateY(-1px);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
         button#sendButton:disabled {
-            background-color: #ccc;
+            background: #ccc;
             cursor: not-allowed;
             transform: none;
+            box-shadow: none;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Loading animation */
         .typing-indicator {
             display: flex;
             gap: 5px;
@@ -216,7 +234,7 @@
         .typing-indicator span {
             width: 8px;
             height: 8px;
-            background-color: #A3B18A;
+            background: var(--primary-color);
             border-radius: 50%;
             animation: typing 1s infinite;
         }
@@ -229,65 +247,132 @@
             50% { transform: translateY(-5px); }
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            transition: var(--transition);
+            padding: 8px;
+        }
+
+        .dark-mode .theme-toggle {
+            color: #fff;
+        }
+
         /* Additional styles for formatted messages */
         .list-item {
-            margin: 8px 0;
-            padding-left: 8px;
+            margin: 4px 0;
+            padding-left: 4px;
         }
 
         .assistant-message strong {
-            color: #344e41;
+            color: var(--primary-color);
         }
 
         .dark-mode .assistant-message strong {
-            color: #a3b18a;
+            color: var(--secondary-color);
         }
 
         .assistant-message em {
             font-style: italic;
-            color: #3a5a40;
+            color: var(--accent-color);
         }
 
-        .dark-mode .assistant-message em {
-            color: #dad7cd;
+        .assistant-message br {
+            display: block;
+            margin: 5px 0;
+            content: "";
+        }
+
+        .assistant-message p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .chat-container {
+                padding: 5px;
+                margin-top: 5px;
+            }
+
+            .message {
+                max-width: 85%;
+                padding: 0.7rem 1rem;
+            }
+
+            .input-area {
+                padding: 10px 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
+    <nav class="navbar">
         <div class="logo">
-            <img src="CareConnectImages/CareConnectLogo.png" alt="CareConnect Logo">
+            <img src="CareConnectImages/CareConnectLogo.png" alt="Care Connect Logo">
         </div>
         <div class="nav-links">
-            <a href="index.html">CareConnect</a>
+            <a href="index.html">Home</a>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#about">About</a>
         </div>
-        <button id="darkModeToggle">Dark Mode</button>
-    </div>
+        <button class="theme-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
 
     <div class="chat-container">
         <div class="chat-messages" id="chatMessages">
             <div class="message assistant-message">
-                Hello! I'm CareConnect, your AI health assistant. How can I help you today?
+                Hello! I'm your CareConnect AI Health Assistant. How can I help you today?
             </div>
         </div>
         <div class="input-area">
-            <textarea id="userInput" placeholder="Describe your symptoms or ask a health question..." rows="1"></textarea>
-            <button onclick="sendMessage()" id="sendButton">Send</button>
+            <textarea id="userInput" placeholder="Type your message here..." rows="1"></textarea>
+            <button id="sendButton">
+                <i class="fas fa-paper-plane"></i>
+            </button>
         </div>
     </div>
 
     <script>
-        // Dark mode functionality
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
+        const navbar = document.querySelector('.navbar');
+        const inputArea = document.querySelector('.input-area');
+        const icon = darkModeToggle.querySelector('i');
 
+        function setDarkMode(enabled) {
+            const elements = [body, navbar, inputArea];
+            if (enabled) {
+                elements.forEach(el => el.classList.add('dark-mode'));
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                elements.forEach(el => el.classList.remove('dark-mode'));
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.removeItem('darkMode');
+            }
+        }
+
+        // Check for saved theme preference
         if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
+            setDarkMode(true);
         }
 
         darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            localStorage.setItem('darkMode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+            const isDarkMode = body.classList.contains('dark-mode');
+            setDarkMode(!isDarkMode);
         });
 
         // Auto-resize textarea

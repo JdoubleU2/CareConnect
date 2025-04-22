@@ -1,0 +1,38 @@
+FROM python:3.12-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    git-lfs \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set up Git LFS
+RUN git lfs install
+
+# Set working directory
+WORKDIR /app
+
+# Copy the entire repository
+COPY . .
+
+# Install Python dependencies
+RUN pip install --upgrade pip && \
+    pip install -r app/requirements.txt && \
+    pip install -r .github/scripts/requirements.txt && \
+    pip install snowflake-connector-python snowflake-snowpark-python
+
+# Make scripts executable
+RUN chmod +x .github/scripts/formatchecker.py
+
+# Set environment variables for testing
+ENV SNOWFLAKE_ACCOUNT=test_account
+ENV SNOWFLAKE_USER=test_user
+ENV SNOWFLAKE_PASSWORD=test_password
+ENV SNOWFLAKE_ROLE=test_role
+ENV SNOWFLAKE_DATABASE=test_db
+ENV SNOWFLAKE_WAREHOUSE=test_wh
+ENV SNOWFLAKE_STAGE=test_stage
+ENV SNOWFLAKE_SCHEMA=test_schema
+
+# Command to run tests
+CMD ["bash", "-c", "python3 .github/scripts/formatchecker.py && cd app && pytest .github/scripts/test_main.py -v"] 

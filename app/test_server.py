@@ -8,7 +8,7 @@ def test_server():
     import subprocess
     try:
         print("Starting server from current directory")
-        server_process = subprocess.Popen(['python', 'app/main.py'])
+        server_process = subprocess.Popen(['python', 'main.py'])
         
         # Wait for server to start with retries
         max_retries = 5

@@ -1,8 +1,11 @@
 from fastapi.testclient import TestClient
-from app.main import app
 import pytest
 from unittest.mock import patch, MagicMock, AsyncMock
 import logging
+
+# Mock the HuggingFaceEndpoint before importing app
+with patch('app.main.HuggingFaceEndpoint', return_value=MagicMock()):
+    from app.main import app
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -14,7 +17,7 @@ client = TestClient(app)
 def test_health_check():
     """
     Test the health check endpoint (/health)
-    This endpoint should return a 200 status code and include status, version, and llm_status
+    This endpoint should return a 200 status code and include status, version, and endpoint_status
     """
     logger.info("🔍 Testing health check endpoint...")
     response = client.get("/health")
@@ -25,7 +28,8 @@ def test_health_check():
     data = response.json()
     assert "status" in data, "Response should include 'status' field"
     assert "version" in data, "Response should include 'version' field"
-    assert "llm_status" in data, "Response should include 'llm_status' field"
+    assert "endpoint_status" in data, "Response should include 'endpoint_status' field"
+    assert data["endpoint_status"] in ["online", "offline"], "endpoint_status should be either 'online' or 'offline'"
     logger.info("✅ Health check test passed!")
 
 @pytest.mark.asyncio

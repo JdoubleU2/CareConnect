@@ -105,12 +105,19 @@ async def invoke_llm(input_data: LLMInput):
 # --- Health Check ---
 @app.get("/health")
 async def health_check():
-    # Check if LLM object is initialized
-    llm_status = "connected" if 'llm' in globals() and llm else "disconnected"
+    try:
+        # Simple test to check if endpoint is responding
+        test_prompt = "Hello"
+        await llm.ainvoke(test_prompt)
+        endpoint_status = "online"
+    except Exception as e:
+        logger.error(f"Endpoint check failed: {str(e)}")
+        endpoint_status = "offline"
+    
     return {
         "status": "healthy",
         "version": "1.0",
-        "llm_status": llm_status
+        "endpoint_status": endpoint_status
     }
 
 # --- Static Files ---

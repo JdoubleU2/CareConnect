@@ -8,7 +8,12 @@ def test_server():
     # Start the server in a separate process
     import subprocess
     try:
-        server_process = subprocess.Popen(['python', 'app/main.py'])
+        # Get the absolute path to main.py
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        main_path = os.path.join(current_dir, '..', 'app', 'main.py')
+        
+        print(f"Starting server from: {main_path}")
+        server_process = subprocess.Popen(['python', main_path])
         
         # Wait for server to start with retries
         max_retries = 5

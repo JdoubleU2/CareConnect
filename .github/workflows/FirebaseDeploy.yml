@@ -33,8 +33,7 @@ jobs:
       env:
         HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
       run: |
-        cd app
-        python ../.github/scripts/test_server.py
+        python .github/scripts/test_server.py
 
   deploy:
     needs: test

@@ -2,18 +2,13 @@ import requests
 import time
 import sys
 import os
-from openai import OpenAI
 
 def test_server():
     # Start the server in a separate process
     import subprocess
     try:
-        # Get the absolute path to main.py
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        main_path = os.path.join(current_dir, '..', 'app', 'main.py')
-        
-        print(f"Starting server from: {main_path}")
-        server_process = subprocess.Popen(['python', main_path])
+        print("Starting server from current directory")
+        server_process = subprocess.Popen(['python', 'app/main.py'])
         
         # Wait for server to start with retries
         max_retries = 5
@@ -34,27 +29,40 @@ def test_server():
         if not server_started:
             raise Exception("Server failed to start within the timeout period")
         
-        # Test Hugging Face endpoint using OpenAI client
-        client = OpenAI(
-            base_url="https://l3w62k457vzkn0yj.us-east4.gcp.endpoints.huggingface.cloud/v1/",
-            api_key=os.getenv("HUGGINGFACE_API_KEY")
-        )
+        # Test Hugging Face endpoint directly
+        endpoint_url = "https://l3w62k457vzkn0yj.us-east4.gcp.endpoints.huggingface.cloud/v1/chat/completions"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {os.getenv('HUGGINGFACE_API_KEY')}"
+        }
         
-        chat_completion = client.chat.completions.create(
-            model="tgi",
-            messages=[
+        data = {
+            "model": "JdoubleU/CareConnect",
+            "messages": [
                 {
                     "role": "user",
                     "content": "CareConnect. Are you ALIVE!?"
                 }
-            ],
-            top_p=None
+            ]
+        }
+        
+        response = requests.post(
+            endpoint_url,
+            headers=headers,
+            json=data,
+            timeout=30
         )
         
         # Verify we got a response
-        assert chat_completion.choices[0].message.content is not None, "No response content received"
+        assert response.status_code == 200, f"Endpoint returned status code {response.status_code}"
+        response_data = response.json()
+        assert "choices" in response_data, "Response missing choices field"
+        assert len(response_data["choices"]) > 0, "No choices in response"
+        assert "message" in response_data["choices"][0], "Choice missing message field"
+        assert "content" in response_data["choices"][0]["message"], "Message missing content field"
+        
         print("✅ Hugging Face endpoint test passed")
-        print(f"Response: {chat_completion.choices[0].message.content[:100]}...")
+        print(f"Response: {response_data['choices'][0]['message']['content'][:100]}...")
         
     except Exception as e:
         print(f"❌ Test failed: {str(e)}")

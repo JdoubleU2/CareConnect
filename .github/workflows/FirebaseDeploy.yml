@@ -32,7 +32,6 @@ jobs:
     
     - name: Run tests
       run: |
-        cd app
         pytest .github/scripts/test_main.py -v
 
   deploy:

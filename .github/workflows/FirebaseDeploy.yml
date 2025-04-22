@@ -25,29 +25,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r app/requirements.txt
-    
 
     - name: Install script dependencies
       run: |
         pip install -r .github/scripts/requirements.txt
     
-    - name: Start Hugging Face Endpoint
-      env:
-        HUGGINGFACE_API_TOKEN: ${{ secrets.HUGGINGFACE_API_TOKEN }}
-      run: |
-        python .github/scripts/manage_endpoint.py start
-    
     - name: Run tests
       run: |
         cd app
         pytest .github/scripts/test_main.py -v
-    
-    - name: Stop Hugging Face Endpoint
-      if: always()  # Run even if tests fail
-      env:
-        HUGGINGFACE_API_TOKEN: ${{ secrets.HUGGINGFACE_API_TOKEN }}
-      run: |
-        python .github/scripts/manage_endpoint.py stop
 
   deploy:
     needs: test

@@ -32,7 +32,7 @@ jobs:
     
     - name: Run tests
       run: |
-        pytest .github/scripts/test_main.py -v
+        PYTHONPATH=$PYTHONPATH:$(pwd) pytest .github/scripts/test_main.py -v
 
   deploy:
     needs: test

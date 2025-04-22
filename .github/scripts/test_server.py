@@ -23,7 +23,7 @@ def test_server():
                     print("✅ Server started successfully")
             except requests.exceptions.RequestException:
                 print(f"Waiting for server to start... (attempt {retry_count + 1}/{max_retries})")
-                time.sleep(2)
+                time.sleep(10)
                 retry_count += 1
         
         if not server_started:

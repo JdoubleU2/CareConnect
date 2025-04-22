@@ -47,7 +47,7 @@ async def log_requests(request: Request, call_next):
 try:
     llm = HuggingFaceEndpoint(
         endpoint_url="https://l3w62k457vzkn0yj.us-east4.gcp.endpoints.huggingface.cloud",
-        huggingfacehub_api_token = 'HUGGINGFACE_API_KEY'
+        huggingfacehub_api_token=os.getenv('HUGGINGFACE_API_KEY')
     )
     logger.info("✅ HuggingFace LLM initialized successfully")
 except Exception as e:

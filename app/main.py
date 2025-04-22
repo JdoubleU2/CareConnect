@@ -47,6 +47,7 @@ async def log_requests(request: Request, call_next):
 try:
     llm = HuggingFaceEndpoint(
         endpoint_url="https://l3w62k457vzkn0yj.us-east4.gcp.endpoints.huggingface.cloud",
+        huggingfacehub_api_token=os.getenv('HUGGINGFACE_API_KEY')
     )
     logger.info("✅ HuggingFace LLM initialized successfully")
 except Exception as e:
@@ -105,12 +106,19 @@ async def invoke_llm(input_data: LLMInput):
 # --- Health Check ---
 @app.get("/health")
 async def health_check():
-    # Check if LLM object is initialized
-    llm_status = "connected" if 'llm' in globals() and llm else "disconnected"
+    try:
+        # Simple test to check if endpoint is responding
+        test_prompt = "Hello"
+        await llm.ainvoke(test_prompt)
+        endpoint_status = "online"
+    except Exception as e:
+        logger.error(f"Endpoint check failed: {str(e)}")
+        endpoint_status = "offline"
+    
     return {
         "status": "healthy",
         "version": "1.0",
-        "llm_status": llm_status
+        "endpoint_status": endpoint_status
     }
 
 # --- Static Files ---

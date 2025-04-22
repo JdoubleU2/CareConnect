@@ -25,10 +25,10 @@ jobs:
         run: git lfs pull
 
       - name: Set execute permission for formatchecker.py
-        run: chmod +x .github/workflows/formatchecker.py
+        run: chmod +x .github/scripts/formatchecker.py
 
       - name: Run Unit Tests
-        run: python3 .github/workflows/formatchecker.py
+        run: python3 .github/scripts/formatchecker.py
 
   deploy-to-snowflake:
     runs-on: ubuntu-latest
@@ -58,5 +58,5 @@ jobs:
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
           SNOWFLAKE_STAGE: ${{ secrets.SNOWFLAKE_STAGE_TEST }}
           SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
-        run: python .github/workflows/upload_data.py
+        run: python .github/scripts/upload_data.py
 

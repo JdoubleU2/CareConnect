@@ -7,8 +7,20 @@ def test_server():
     # Start the server in a separate process
     import subprocess
     try:
+        # Get API key from environment or GitHub secrets
+        api_key = os.getenv('HUGGINGFACE_API_KEY')
+        if not api_key:
+            raise Exception("HUGGINGFACE_API_KEY environment variable is not set")
+        
+        # Set the environment variable for the server process
+        env = os.environ.copy()
+        env['HUGGINGFACE_API_KEY'] = api_key
+        
         print("Starting server from current directory")
-        server_process = subprocess.Popen(['python', 'main.py'])
+        server_process = subprocess.Popen(
+            ['python', 'main.py'],
+            env=env
+        )
         
         # Wait for server to start with retries
         max_retries = 5
@@ -33,7 +45,7 @@ def test_server():
         endpoint_url = "https://l3w62k457vzkn0yj.us-east4.gcp.endpoints.huggingface.cloud/v1/chat/completions"
         headers = {
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {os.getenv('HUGGINGFACE_API_KEY')}"
+            "Authorization": f"Bearer {api_key}"
         }
         
         data = {

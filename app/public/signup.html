@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Care Connect - Sign Up</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+/* Global styles */
+body {
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background: linear-gradient(45deg, #A3B18A, #588157);
+background-size: 400% 400%;
+animation: gradientAnimation 10s ease infinite;
+font-family: Arial, sans-serif;
+padding: 0;
+overflow: hidden;
+position: relative;
+}
+@keyframes gradientAnimation {
+0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
+}
+.particles {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 1;
+}
+.particle {
+position: absolute;
+width: 6px;
+height: 6px;
+background-color: rgba(255, 255, 255, 0.7);
+border-radius: 50%;
+animation: float 5s ease-in-out infinite;
+}
+@keyframes float {
+0% {
+transform: translate(0, 0);
+opacity: 1;
+}
+50% {
+transform: translate(50px, -100px);
+opacity: 0.7;
+}
+100% {
+transform: translate(0, 0);
+opacity: 1;
+}
+}
+.container {
+background-color: #fff;
+border-radius: 16px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+padding: 30px 20px;
+width: 100%;
+max-width: 400px;
+animation: fadeIn 2s ease forwards;
+position: relative;
+z-index: 2;
+opacity: 0;
+}
+@keyframes fadeIn {
+0% {
+opacity: 0;
+transform: translateY(20px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+.form_title {
+text-align: center;
+font-size: 24px;
+color: #588157;
+margin-bottom: 20px;
+animation: slideIn 0.6s ease forwards;
+}
+@keyframes slideIn {
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+.form_div {
+position: relative;
+margin-bottom: 20px;
+opacity: 0;
+transform: translateX(-20px);
+animation: slideIn 0.6s ease forwards;
+}
+.form_div:nth-child(2) { animation-delay: 0.2s; }
+.form_div:nth-child(3) { animation-delay: 0.4s; }
+.form_div:nth-child(4) { animation-delay: 0.6s; }
+.form_input {
+width: 100%;
+padding: 14px 10px;
+border: 1px solid #A3B18A;
+border-radius: 4px;
+background-color: #f9f9f9;
+font-size: 16px;
+outline: none;
+}
+.form_label {
+position: absolute;
+top: 50%;
+left: 12px;
+transform: translateY(-50%);
+font-size: 16px;
+color: #888;
+pointer-events: none;
+transition: all 0.2s ease;
+background: #fff;
+padding: 0 4px;
+}
+.form_input:focus + .form_label,
+.form_input:not(:placeholder-shown) + .form_label {
+top: 10px;
+left: 10px;
+font-size: 12px;
+color: #588157;
+}
+.password-requirements {
+font-size: 12px;
+color: #666;
+margin-top: 5px;
+}
+.btn {
+background-color: #588157;
+color: #fff;
+border: none;
+padding: 14px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s ease;
+animation: slideIn 0.6s ease forwards;
+animation-delay: 0.8s;
+opacity: 0;
+transform: translateX(-20px);
+}
+.btn:hover {
+background-color: #3d5a41;
+}
+.link {
+text-align: center;
+margin-top: 15px;
+font-size: 14px;
+animation: fadeIn 1.5s ease forwards;
+opacity: 0;
+animation-delay: 1.2s;
+}
+.link a {
+color: #3d5a41;
+text-decoration: none;
+}
+.link a:hover {
+text-decoration: underline;
+}
+.success-message {
+display: none;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+animation: fadeIn 1.5s ease forwards;
+margin-top: 20px;
+}
+.success-message.show {
+display: flex;
+}
+.checkmark {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+display: inline-block;
+border: 4px solid #588157;
+position: relative;
+margin-bottom: 20px;
+animation: bounce 0.6s ease-out forwards;
+}
+.checkmark::after {
+content: '';
+position: absolute;
+left: 22px;
+top: 38px;
+width: 20px;
+height: 40px;
+border-right: 4px solid #588157;
+border-bottom: 4px solid #588157;
+transform: rotate(45deg) scale(0);
+transform-origin: center;
+animation: check 0.4s 0.6s ease forwards;
+}
+@keyframes check {
+to {
+transform: rotate(45deg) scale(1);
+}
+}
+@keyframes bounce {
+0% { transform: scale(0.6); opacity: 0; }
+60% { transform: scale(1.1); opacity: 1; }
+100% { transform: scale(1); }
+}
+/* Particles - Animated floating dots */
+.particles {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 1;
+}
+.particle {
+position: absolute;
+width: 6px;
+height: 6px;
+background-color: rgba(255, 255, 255, 0.7);
+border-radius: 50%;
+animation: float 5s ease-in-out infinite;
+}
+@keyframes float {
+0% {
+transform: translate(0, 0);
+opacity: 1;
+}
+50% {
+transform: translate(50px, -100px);
+opacity: 0.7;
+}
+100% {
+transform: translate(0, 0);
+opacity: 1;
+}
+}
+@media (max-width: 480px) {
+.form_title {
+font-size: 20px;
+}
+.form_input {
+font-size: 14px;
+}
+.form_label {
+font-size: 14px;
+}
+.btn {
+font-size: 14px;
+padding: 12px;
+}
+}
+</style>
+<script>
+// Particles Animation
+function generateParticles() {
+const particlesContainer = document.querySelector('.particles');
+for (let i = 0; i < 100; i++) {
+const particle = document.createElement('div');
+particle.classList.add('particle');
+particle.style.left =
+`${Math.random() * 100}%`;
+particle.style.animationDuration =
+`${Math.random() * 2 + 3}s`;
+particle.style.animationDelay =
+`${Math.random() * 5}s`;
+particlesContainer.appendChild(particle);
+}
+}
+function validatePassword() {
+const password = document.getElementById('password').value;
+const requirements = document.getElementById('password-requirements');
+const regexUpper = /[A-Z]/;
+const regexLower = /[a-z]/;
+const regexNumber = /\d/;
+if (
+) {
+password.length >= 8 &&
+regexUpper.test(password) &&
+regexLower.test(password) &&
+regexNumber.test(password)
+requirements.style.color = 'green';
+requirements.innerText = 'Password meets requirements.';
+} else {
+requirements.style.color = 'red';
+requirements.innerText =
+'Password must be at least 8 characters, contain an uppercase letter, a
+lowercase letter, and a number.';
+}
+}
+function validateForm() {
+const password = document.getElementById("password").value;
+const confirmPassword = document.getElementById("confirm-password").value;
+const requirements = document.getElementById("password-requirements");
+if (password !== confirmPassword) {
+alert("Passwords do not match.");
+return false;
+}
+if (requirements.style.color !== "green") {
+alert("Password does not meet the requirements.");
+return false;
+}
+return true;
+}
+window.onload = function() {
+generateParticles();
+};
+</script>
+</head>
+<body>
+<div class="particles"></div>
+<div class="container">
+<h2 class="form_title">Care Connect - Sign Up</h2>
+<form class="form" onsubmit="return validateForm()">
+<div class="form_div">
+<input type="email" id="email" class="form_input" required placeholder="Email">
+<label for="email" class="form_label">Email</label>
+</div>
+<div class="form_div">
+<input type="password" id="password" class="form_input"
+onkeyup="validatePassword()" required placeholder="Password">
+<label for="password" class="form_label">Password</label>
+</div>
+<p id="password-requirements" class="password-requirements">
+Password must be at least 8 characters, contain an uppercase letter, a
+lowercase letter, and a number.
+</p>
+<div class="form_div">
+<input type="password" id="confirm-password" class="form_input" required
+placeholder="Confirm Password">
+<label for="confirm-password" class="form_label">Confirm Password</label>
+</div>
+<button type="submit" class="btn">Sign Up</button>
+</form>
+<p class="link">Already have an account? <a href="login.html">Login</a></p>
+<!-- ✅ Success Message -->
+<div class="success-message">
+<div class="checkmark"></div>
+<h3>You're all set!</h3>
+<p>Account created successfully.</p>
+</div>
+</div>
+</body>
+</html>

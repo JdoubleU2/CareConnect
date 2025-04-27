@@ -1,3 +1,4 @@
 *.csv filter=lfs diff=lfs merge=lfs -text
 *.xlsx filter=lfs diff=lfs merge=lfs -text
 *.jsonl filter=lfs diff=lfs merge=lfs -text
+data/processed_data/jsonl/*.jsonl filter=lfs diff=lfs merge=lfs

@@ -1,0 +1,85 @@
+name: Google Cloud Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  REGION: us-central1  
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f "app/requirements.txt" ]; then
+          pip install -r app/requirements.txt
+        fi
+        pip install requests openai
+    
+    - name: Run tests
+      env:
+        HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
+      run: |
+        cd app
+        python test_server.py
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Authenticate to Google Cloud
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: ${{ secrets.GCP_SA_KEY }}
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        create_credentials_file: true
+
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        install_components: 'gke-gcloud-auth-plugin'
+
+    - name: Configure Docker for GCR
+      run: |
+        gcloud auth configure-docker --quiet
+        gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://gcr.io
+
+    - name: Build and push container
+      run: |
+        cd app
+        docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/careconnect:${{ github.sha }} .
+        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/careconnect:${{ github.sha }}
+
+    - name: Deploy to Cloud Run
+      run: |
+        gcloud run deploy careconnect \
+          --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/careconnect:${{ github.sha }} \
+          --platform managed \
+          --region ${{ env.REGION }} \
+          --allow-unauthenticated \
+          --port 8080
+
+    - name: Deploy to Firebase Hosting
+      uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+        projectId: ${{ secrets.FIREBASE_PROJECT_ID }}
+        channelId: live

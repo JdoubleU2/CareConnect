@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Care Connect - Login</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+/* Global styles */
+body {
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background: linear-gradient(45deg, #A3B18A, #588157);
+background-size: 400% 400%;
+animation: gradientAnimation 10s ease infinite;
+font-family: Arial, sans-serif;
+padding: 0;
+overflow: hidden;
+position: relative;
+}
+@keyframes gradientAnimation {
+0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
+}
+.particles {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 1;
+}
+.particle {
+position: absolute;
+width: 6px;
+height: 6px;
+background-color: rgba(255, 255, 255, 0.7);
+border-radius: 50%;
+animation: float 5s ease-in-out infinite;
+}
+@keyframes float {
+0% {
+transform: translate(0, 0);
+opacity: 1;
+}
+50% {
+transform: translate(50px, -100px);
+opacity: 0.7;
+}
+100% {
+transform: translate(0, 0);
+opacity: 1;
+}
+}
+.container {
+background-color: #fff;
+border-radius: 16px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+padding: 30px 20px;
+width: 100%;
+max-width: 400px;
+animation: fadeIn 2s ease forwards;
+position: relative;
+z-index: 2;
+opacity: 0;
+}
+@keyframes fadeIn {
+0% {
+opacity: 0;
+transform: translateY(20px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+.form_title {
+text-align: center;
+font-size: 24px;
+color: #588157;
+margin-bottom: 20px;
+animation: slideIn 0.6s ease forwards;
+}
+@keyframes slideIn {
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+.form_div {
+position: relative;
+margin-bottom: 20px;
+opacity: 0;
+transform: translateX(-20px);
+animation: slideIn 0.6s ease forwards;
+}
+.form_div:nth-child(2) { animation-delay: 0.2s; }
+.form_div:nth-child(3) { animation-delay: 0.4s; }
+.form_input {
+width: 100%;
+padding: 14px 10px;
+border: 1px solid #A3B18A;
+border-radius: 4px;
+background-color: #f9f9f9;
+font-size: 16px;
+outline: none;
+}
+.form_label {
+position: absolute;
+top: 50%;
+left: 12px;
+transform: translateY(-50%);
+font-size: 16px;
+color: #888;
+pointer-events: none;
+transition: all 0.2s ease;
+background: #fff;
+padding: 0 4px;
+}
+.form_input:focus + .form_label,
+.form_input:not(:placeholder-shown) + .form_label {
+top: 10px;
+left: 10px;
+font-size: 12px;
+color: #588157;
+}
+.btn {
+background-color: #588157;
+color: #fff;
+border: none;
+padding: 14px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s ease;
+animation: slideIn 0.6s ease forwards;
+animation-delay: 0.8s;
+opacity: 0;
+transform: translateX(-20px);
+}
+.btn:hover {
+background-color: #3d5a41;
+}
+.link {
+text-align: center;
+margin-top: 15px;
+font-size: 14px;
+animation: fadeIn 1.5s ease forwards;
+opacity: 0;
+animation-delay: 1.2s;
+}
+.link a {
+color: #3d5a41;
+text-decoration: none;
+}
+.link a:hover {
+text-decoration: underline;
+}
+/* Error message */
+.error-message {
+color: red;
+text-align: center;
+margin-top: 10px;
+opacity: 0; /* Initially hidden */
+transform: translateY(20px);
+animation: fadeInError 0.8s forwards;
+display: none; /* Hide initially */
+}
+/* Error message animation */
+@keyframes fadeInError {
+0% {
+opacity: 0;
+transform: translateY(20px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+/* Try Again button */
+.try-again {
+display: none; /* Hidden initially */
+text-align: center;
+margin-top: 20px;
+opacity: 0;
+transform: translateY(20px);
+animation: fadeInTryAgain 0.8s forwards;
+}
+/* Try Again button animation */
+@keyframes fadeInTryAgain {
+0% {
+opacity: 0;
+transform: translateY(20px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@media (max-width: 480px) {
+.form_title {
+font-size: 20px;
+}
+.form_input {
+font-size: 14px;
+}
+.form_label {
+font-size: 14px;
+}
+.btn {
+font-size: 14px;
+padding: 12px;
+}
+}
+</style>
+<script>
+// Particles Animation
+function generateParticles() {
+const particlesContainer = document.querySelector('.particles');
+for (let i = 0; i < 100; i++) {
+const particle = document.createElement('div');
+particle.classList.add('particle');
+particle.style.left =
+`${Math.random() * 100}%`;
+particle.style.animationDuration =
+`${Math.random() * 2 + 3}s`;
+particle.style.animationDelay =
+`${Math.random() * 5}s`;
+particlesContainer.appendChild(particle);
+}
+}
+window.onload = function() {
+generateParticles();
+};
+// Simulate login process
+function handleLogin(event) {
+event.preventDefault();
+const email = document.getElementById('email').value;
+const password = document.getElementById('password').value;
+// Simple validation check (replace with actual logic)
+const validEmail = "user@example.com";
+const validPassword = "Password123";
+if (email === validEmail && password === validPassword) {
+alert("Login Successful!");
+} else {
+showError();
+}
+}
+function showError() {
+const errorMessage = document.getElementById("error-message");
+const tryAgainButton = document.getElementById("try-again");
+errorMessage.style.display = "block"; // Show the error message
+setTimeout(() => {
+errorMessage.style.opacity = "1"; // Fade in the error message
+errorMessage.style.transform = "translateY(0)"; // Slide up the error message
+}, 100); // Delay the fade-in for smooth transition
+tryAgainButton.style.display = "block"; // Show the "Try Again" button
+setTimeout(() => {
+tryAgainButton.style.opacity = "1"; // Fade in the "Try Again" button
+tryAgainButton.style.transform = "translateY(0)"; // Slide up the "Try Again"
+button
+}, 100); // Delay the fade-in for smooth transition
+}
+function tryAgain() {
+const errorMessage = document.getElementById("error-message");
+const tryAgainButton = document.getElementById("try-again");
+// Hide error message and try again button with smooth transition
+errorMessage.style.opacity = "0";
+errorMessage.style.transform = "translateY(20px)";
+tryAgainButton.style.opacity = "0";
+tryAgainButton.style.transform = "translateY(20px)";
+setTimeout(() => {
+errorMessage.style.display = "none"; // Hide the error message after fade-out
+tryAgainButton.style.display = "none"; // Hide the "Try Again" button after
+fade-out
+}, 800); // Wait for animation to complete
+}
+</script>
+</head>
+<body>
+<div class="particles"></div>
+<div class="container">
+<h2 class="form_title">Care Connect - Login</h2>
+<form class="form" onsubmit="handleLogin(event)">
+<div class="form_div">
+<input type="email" id="email" class="form_input" required placeholder="Email">
+<label for="email" class="form_label">Email</label>
+</div>
+<div class="form_div">
+<input type="password" id="password" class="form_input" required
+placeholder="Password">
+<label for="password" class="form_label">Password</label>
+</div>
+<button type="submit" class="btn">Login</button>
+</form>
+<p id="error-message" class="error-message">Invalid email or password.</p>
+<div id="try-again" class="try-again">
+<button type="button" class="btn" onclick="tryAgain()">Try Again</button>
+</div>
+<p class="link">
+<a href="forgot-username.html">Forgot Username?</a> |
+<a href="forgot-password.html">Forgot Password?</a>
+</p>
+<p class="link">Don't have an account? <a href="signup.html">Sign Up</a></p>
+</div>
+</body>
+</html>

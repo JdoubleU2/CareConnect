@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us - Chatbot</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<style>
+:root {
+--bg-color: transparent;
+--text-color: #333;
+--accent-color: hsl(121, 54%, 16%);
+--background-image: url('https://images.unsplash.com/photo-1624861234508-209e3b68d5e5?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+[data-theme="light"] {
+--bg-color: #121212;
+--text-color: #14911e;
+--accent-color: #00c896;
+--background-image: none;
+background-color: #121212;
+}
+
+html {
+scroll-behavior: smooth;
+}
+body {
+margin: 0;
+font-family: 'Arial', sans-serif;
+background: var(--background-image) no-repeat center center fixed;
+background-size: cover;
+background-attachment: fixed;
+color: var(--text-color);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--accent-color);
+  padding: 20px 30px;
+  display: flex;
+  justify-content: flex-end; /* <-- shift all content to the right */
+  align-items: center;
+  gap: 70px; /* add some spacing between links and toggle */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.navbar a {
+  color: rgb(21, 83, 31);
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar a:hover {
+  text-decoration: underline;
+}
+.toggle-switch {
+display: flex;
+align-items: center;
+}
+.toggle-switch input {
+height: 0;
+width: 0;
+visibility: hidden;
+}
+.toggle-switch label {
+cursor: pointer;
+text-indent: -9999px;
+width: 50px;
+height: 25px;
+background: grey;
+display: block;
+border-radius: 100px;
+position: relative;
+}
+.toggle-switch label:after {
+content: '';
+position: absolute;
+left: 5px;
+top: 5px;
+width: 15px;
+height: 15px;
+background: white;
+border-radius: 90px;
+transition: 0.3s;
+}
+.toggle-switch input:checked + label {
+background: #2ecc71;
+}
+.toggle-switch input:checked + label:after {
+left: calc(100% - 5px - 15px);
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+.social-icons a {
+  color: var(--accent-color);
+  font-size: 22px;
+  margin: 0 8px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: #000; /* changes color slightly when hovering */
+}
+
+
+/* Frosted glass background container */
+.glass-panel {
+  backdrop-filter: blur(5px);
+  background: rgba(255,255,255,0.2);
+  padding: 30px;
+  margin: 50px auto;
+  max-width: 900px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+/* Chatbot Bubble */
+.chatbot-bubble {
+background: var(--accent-color);
+color: white;
+padding: 15px 20px;
+border-radius: 20px;
+margin: 40px auto 20px auto;
+text-align: center;
+width: fit-content;
+animation: slideIn 1s ease-out;
+}
+@keyframes slideIn {
+from { transform: translateY(-30px); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
+}
+
+h1, h2 {
+text-align: center;
+margin-top: 20px;
+}
+#auto-type {
+font-size: 20px;
+text-align: center;
+margin-bottom: 30px;
+min-height: 40px;
+}
+
+/* Accordion Sections */
+section {
+padding: 50px 20px;
+max-width: 900px;
+margin: auto;
+text-align: center;
+}
+section h2 {
+margin-bottom: 15px;
+}
+section p {
+font-size: 18px;
+line-height: 1.6;
+}
+
+/* Team Section */
+.team {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;
+margin-top: 40px;
+padding-bottom: 60px;
+}
+.team-member {
+background-color: rgba(255,255,255,0.9);
+border-radius: 10px;
+width: 220px;
+padding: 20px;
+text-align: center;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+transition: transform 0.3s;
+cursor: pointer;
+}
+.team-member:hover {
+transform: translateY(-8px);
+}
+.team-member img {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border-radius: 50%;
+margin-bottom: 10px;
+border: 3px solid var(--accent-color);
+}
+.team-member h3 {
+margin: 10px 0 5px;
+font-size: 20px;
+}
+.team-member p {
+font-size: 16px;
+color: #555;
+}
+
+@media (max-width: 600px) {
+.team {
+flex-direction: column;
+align-items: center;
+}
+.team-member {
+width: 90%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+<div>
+    <a href="index.html">Home</a>
+    <a href="CareConnect_chat.html">Care Bot</a>
+    <a href="signin.html">Sign In/Up</a>
+</div>
+<div class="toggle-switch">
+<input type="checkbox" id="theme-toggle">
+<label for="theme-toggle">Toggle Theme</label>
+</div>
+</div>
+
+<!-- Chatbot Welcome -->
+<div class="chatbot-bubble">
+Hi there! Welcome to CareConnect.
+</div>
+
+<h1>About CareConnect</h1>
+<div id="auto-type"></div>
+
+<!-- Sections -->
+<!-- Sections with Glass Panels -->
+<div class="glass-panel" id="about">
+<h1>About Our Chatbot</h1>
+<div id="auto-type"></div>
+</div>
+
+<div class="glass-panel" id="mission">
+<h2>Our Mission</h2>
+<p>We aim to make technology more human, accessible, and helpful — every conversation, every time.</p>
+</div>
+
+<div class="glass-panel" id="vision">
+<h2>Our Vision</h2>
+<p>Imagine a world where you can obtain accurate, personalized medical information all from the palm of your hand. We are building that reality today!</p>
+</div>
+
+<div class="glass-panel" id="goals">
+<h2>Our Future Goals</h2>
+<p>At CareConnect, we’re working to make healthcare more personal, more accurate, and always secure. We’re committed to protecting your privacy and following HIPAA standards every step of the way.
+
+We imagine a world where you can easily share your medical records with us — safely — so we can give you care that's tailored just for you. Along with location access, we’ll help you find the right doctors nearby and connect you to pharmacies that have exactly what you need.
+
+CareConnect is the place you can trust. We're here to take care of you!</p>
+</div>
+
+<!-- Meet the Team -->
+<h2>Meet the Team</h2>
+<div class="team">
+    <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Jabin Wade">
+        <h3>Jabin Wade</h3>
+        <h4>Team Lead</h4>
+        <p>Back-end Lead Developer</p>
+        
+    <div class="social-icons">
+        <a href="https://linkedin.com/in/jabinwade" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/jabinwade" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:someone@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    </div>
+
+    <div class="team-member">
+        <img src="CareConnectImages/AubreyLister.jpg" alt="Aubrey Lister">
+        <h3>Aubrey Lister</h3>
+        <p>Front-end Lead Developer</p>
+
+    <div class="social-icons">
+        <a href="https://linkedin.com/in/AubreyLister" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/AubreyLister" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:aubreyylisterr@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    </div>
+
+    <div class="team-member">
+        <img src="CareConnectImages/ZeroNelsonImg.jpg" alt="Zero Nelson">
+        <h3>Zero Nelson</h3>
+        <p>Data Analyst</p>
+
+    <div class="social-icons">
+        <a href="https://linkedin.com/in/zeronelson" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://GitHub.com/zeronelson" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:someone@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    </div>
+
+    <div class="team-member">
+        <img src="CareConnectImages/LindseyLittlejohnImg.jpeg" alt="Lindsey Littlejohn">
+        <h3>Lindsey Littlejohn</h3>
+        <p>Front-end Developer</p>
+
+    <div class="social-icons">
+        <a href="https://linkedin.com/in/LindseyLittlejohn" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/LindseyLittlejohn" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:someone@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    </div>
+
+<!-- JavaScript -->
+<script>
+// Auto Typing
+const text = "CareConnect makes conversations natural, informative, and friendly.";
+let index = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const typingElement = document.getElementById("auto-type");
+
+  if (!isDeleting) {
+    typingElement.innerHTML = text.substring(0, index + 1);
+    index++;
+    if (index === text.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 2000); // Wait before starting to delete
+      return;
+    }
+  } else {
+    typingElement.innerHTML = text.substring(0, index - 1);
+    index--;
+    if (index === 0) {
+      isDeleting = false;
+    }
+  }
+  setTimeout(typeEffect, isDeleting ? 30 : 50); // Faster delete speed
+}
+
+typeEffect();
+</script>
+
+
+</body>
+</html>

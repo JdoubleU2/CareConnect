@@ -1,134 +1,163 @@
-***
+# CareConnect Model Fine-tuning
 
-# STOP AND READ
+This directory contains the code and resources for fine-tuning the CareConnect AI model.
 
-***
+## 🎯 Overview
 
-## This will be the source code for finetuning our model. You will need the following to get started.
+The CareConnect model is fine-tuned using medical datasets to provide accurate and responsible health advice. This process involves:
 
-unsloth: https://github.com/unslothai/unsloth
+- Dataset preparation and preprocessing
+- Model training and validation
+- Performance evaluation
+- Model deployment to Hugging Face
 
-CUDA (if you have a GPU): https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_network
+## 📊 Dataset Preparation
 
-ollama: https://ollama.com/
+### Dataset Location
+All training datasets are located in the `/data` directory at the project root. The directory structure is as follows:
 
-Hugging Face (account and access token): https://huggingface.co
+```
+/data/
+├── drug/          
+├── explain/ 
+├── predict-illness/     
+└── predict-treatment/ 
+```
 
-tutorial: https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Llama3.2_(1B_and_3B)-Conversational.ipynb#scrollTo=C_sGp5XlG6dq
+### Medical Datasets
+- Treatment Prediction datasets (by health catagory) (`/data/predict-treatment/`)
+- Illness Prediction datasets (by health catagory) (`/data/predict-illness/`)
+- Drug Information datasets (`/data/drug/`)
+- General Health Questions Qatasets (`/data/explain/`)
 
-***
+### Preprocessing Steps
+1. Data cleaning and normalization
+2. Tokenization and formatting
+3. Dataset splitting (train/validation/test)
+4. Quality assurance checks
 
-## Windows setup:
-### 1. Setup WSL for Windows    
+## 🚂 Model Training
 
-Open Powershell
+### Base Models
+- Llama 3.2 (3B parameters)
+- Gemma 3 (4B parameters) - Coming Soon
 
-`wsl --install`
+### Training Configuration
+```python
+training_args = {
+    "learning_rate": 2e-5,
+    "num_train_epochs": 3,
+    "per_device_train_batch_size": 16,
+    "gradient_accumulation_steps": 8,
+    "warmup_steps": 500,
+    "weight_decay": 0.01,
+    "logging_steps": 10,
+    "save_steps": 1000
+}
+```
 
-### 2. install VsCode in WSL
+### Training Process
+1. Load pre-trained model
+2. Apply medical dataset
+3. Fine-tune with specified parameters
+4. Validate performance
+5. Save checkpoints
 
-Go to VsCode website download the linux version of VsCode.
+## 📈 Performance Metrics
 
-Put this version inside linux distro
+### Evaluation Criteria
+- Medical accuracy
+- Response coherence
+- Safety compliance
+- Response time
+- Token efficiency
 
-inside WSL shell...
+### Benchmark Results
+- Medical QA accuracy: 
+- Response coherence:
+- Safety compliance: 
+- Average response time: 
 
-    sudo dpkg -i code_1.96.4-1736991114_amd64.deb
+## 🚀 Deployment
 
-    sudo apt update
-    sudo apt install -f
+### Hugging Face Integration
+1. Model conversion to Hugging Face format
+2. Upload to Hugging Face Hub
+3. Set up inference API
+4. Configure model card and documentation
 
-Open VsCode
+### Model Cards
+- [careconnect-llama3.2-3b](https://huggingface.co/JdoubleU/careconnect-llama3.2-3b)
+- careconnect-gemma3-4b (Coming Soon)
 
-    Code
+## 🛠️ Local Development
 
+### Setup
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### 3. Install MiniConda on WSL
+2. Configure environment:
+   ```bash
+   export HF_TOKEN=your_huggingface_token
+   export WANDB_API_KEY=your_wandb_key
+   ```
 
-    mkdir -p ~/miniconda3
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-    bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3/
-    ~/miniconda3/bin/conda init bash
+### Training
+1. Prepare dataset:
+   ```bash
+   python prepare_dataset.py
+   ```
 
-Close and re-open shell 
+2. Start training:
+   ```bash
+   python train.py
+   ```
 
-***
+3. Evaluate model:
+   ```bash
+   python evaluate.py
+   ```
 
-## Setup Enviroment 
+## 📦 Docker Support
 
-### 1. Create Conda Enviroment (This takes a while)
-    
-    conda create --name unsloth_env python=3.11 pytorch-cuda=12.1 pytorch cudatoolkit xformers -c pytorch -c nvidia -c xformers -y
+Build the training environment:
+```bash
+docker build -t careconnect-training .
+```
 
-Open Enviroment
+Run training:
+```bash
+docker run -it \
+  -v $(pwd)/data:/app/data \
+  -e HF_TOKEN=your_huggingface_token \
+  careconnect-training
+```
 
-    conda activate unsloth_env
+## 🔍 Testing
 
-Install unsloth
+Run model tests:
+```bash
+python -m pytest tests/
+```
 
-    pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+Test categories:
+- Dataset validation
+- Training pipeline
+- Model performance
+- Deployment checks
 
-Install other dependencys
+## 📚 Resources
 
-    pip install --no-deps trl peft accelerate bitsandbytes
-
-
-### Oh yea. Now were cooking. 
-
-***
-
-## MAC Setup (ARM)
-
-### 1. Install miniconda
-
-    mkdir -p ~/miniconda3
-    curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
-    bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-    rm ~/miniconda3/miniconda.sh
-
-### 2. Close and reopen terminal 
-
-    source ~/miniconda3/bin/activate
-
-### 3. Close and reopen terminal 
-
-    conda init --all
-
-## Create enviorment 
-
-    conda create --name unsloth_env python=3.11 pytorch torchvision torchaudio -c pytorch -y
-
-### 1. Open Enviroment
-
-    conda activate unsloth_env
-
-### 2. Install Packages to run without GPU 
-
-(If you made it this far and think you plan on training the model on MAC.... i got bad news for ya)
-
-    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cpu
-    pip install tensorflow-macos tensorflow-metal
+### Documentation
+- [Hugging Face Transformers](https://huggingface.co/docs/transformers/index)
+- [Medical NLP Best Practices](https://huggingface.co/docs/transformers/tasks/medical)
+- [Model Cards](https://huggingface.co/docs/hub/model-cards)
 
 
+## 📞 Support
 
-You also could just run the finetune.ipynb file in google collab. Sorry ou had to scroll so far to see this lol.
-
-## Training hosted by Google Colab
-
-### 1. Clone repository into Google Colab or Export finetune.ipynb to Google Colab Notebook 
-
-### 2. Use Google hosted GPU
-    Runtime -> Change Runtime Type -> Select GPU
-
-### 3. Import training data into Google Colab
-
-### 4. Add your huggingface token to save your created model to huggingface  
-
-#### 4.1 Go to hugging face huggingface.co generate a Access Token https://huggingface.co/settings/tokens 
-
-#### 4.2 In finetune.ipynb scroll down to the "Local Saving" Section and paste your generated write token 
-    from huggingface_hub import login
-    #put your login stuff here
-    #login("Your token here")
-    
-After running the script the model will be saved at https://huggingface.co/YourUserName/careconnect-llama3.2-3b. From here, you can obtain the ollama command to run the model with ollama 
+For questions about model fine-tuning or training:
+- Team Lead & LLM Training Lead: Jabin Wade [jwade23@pvamu.edu](mailto:Jwade23@pvamu.edu)
+- Lead Data Engineer: Zero Nelson [jnelson50@pvamu.edu](mailto:jnelson50@pvamu.edu)

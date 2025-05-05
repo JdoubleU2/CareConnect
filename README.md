@@ -9,6 +9,7 @@ Developer Repository for the Software Surgeons' 'CareConnect' project
 ## 📌 Table of Contents  
 - [Overview](#overview)  
 - [Model Information](#model-information)  
+- [Web Application](#web-application)
 - [Installation & Usage](#installation--usage)  
 - [Contributing](#contributing)  
 - [License](#license)  
@@ -29,6 +30,33 @@ To run the model with `ollama`, use:
 ```sh
 ollama run hf.co/JdoubleU/careconnect-llama3.2-3b
 ```
+
+## 🌐 Web Application
+CareConnect is available as a web application with the following architecture:
+
+### Frontend
+- Hosted on Firebase at [https://softwaresurgeons.web.app/](https://softwaresurgeons.web.app/)
+- Modern, responsive web interface
+- Built with React and Firebase Hosting
+
+### Backend
+- Located in the `/app` directory
+- Python-based server application
+- Hosted on Google Cloud Run
+- Docker containerized for easy deployment
+- Includes comprehensive testing suite (`test_server.py`)
+
+### Local Development
+To run the web application locally:
+1. Navigate to the `/app` directory
+2. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. Run the development server:
+   ```sh
+   python main.py
+   ```
 
 ## 🔄 Pulling and Syncing the Repository  
 

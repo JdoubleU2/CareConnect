@@ -42,7 +42,7 @@ def test_server():
             raise Exception("Server failed to start within the timeout period")
         
         # Test Hugging Face endpoint directly
-        endpoint_url = "https://l3w62k457vzkn0yj.us-east4.gcp.endpoints.huggingface.cloud/v1/chat/completions"
+        endpoint_url = "https://l3w62k457vzkn0yj.us-east4.gcp.endpoints.huggingface.cloud"
         headers = {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {api_key}"

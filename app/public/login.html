@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Care Connect - Login</title>
+<title>CareConnect - Login</title>
 <style>
 * {
 margin: 0;
@@ -294,7 +294,7 @@ fade-out
 <body>
 <div class="particles"></div>
 <div class="container">
-<h2 class="form_title">Care Connect - Login</h2>
+<h2 class="form_title">CareConnect - Login</h2>
 <form class="form" onsubmit="handleLogin(event)">
 <div class="form_div">
 <input type="email" id="email" class="form_input" required placeholder="Email">
@@ -305,7 +305,8 @@ fade-out
 placeholder="Password">
 <label for="password" class="form_label">Password</label>
 </div>
-<button type="submit" class="btn">Login</button>
+<button type="button" class="btn" onclick="window.location.href='index.html'">Login</button>
+
 </form>
 <p id="error-message" class="error-message">Invalid email or password.</p>
 <div id="try-again" class="try-again">

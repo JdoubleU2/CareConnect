@@ -1,174 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Care Connect</title>
-    <style>
-        /* General styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-            transition: background-color 0.3s, color 0.3s;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Care Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg-color: transparent;
+      --text-color: #333;
+      --accent-color: #588157;
+    }
 
-        body.dark-mode {
-            background-color: #333;
-            color: #f5f5f5;
-        }
+    body {
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1588776814546-ec7d1fe139d9?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #588157;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    body.dark-mode {
+      background-color: #333;
+      color: #f5f5f5;
+    }
 
-        .navbar.dark-mode {
-            background-color: #444;
-        }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--accent-color);
+      padding: 20px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        .navbar a, .navbar button {
-            text-decoration: none;
-            color: white;
-            margin: 0 10px;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-        .navbar a:hover, .navbar button:hover {
-            color: #A3B18A;
-        }
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
 
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 50px 20px;
-        }
+    .logo {
+      height: 50px;
+      width: auto;
+    }
 
-        .text-section {
-            max-width: 50%;
-        }
+    .site-name {
+      font-size: 20px;
+      color: white;
+      font-weight: bold;
+    }
 
-        .text-section h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
+    .navbar a,
+    .navbar button {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
 
-        .text-section p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
+    .navbar a:hover,
+    .navbar button:hover {
+      color: #a3b18a;
+    }
 
-        .text-section .sign-up-btn {
-            background-color: #A3B18A;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-        }
+    .theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: white;
+      transition: color 0.3s ease;
+    }
 
-        .image-section img {
-            max-width: 90%;
-            border-radius: 10px;
-        }
+    body.dark-mode .theme-toggle {
+      color: #f5f5f5;
+    }
 
-        .blue-strip {
-            background-color: #6EC1E4;
-            padding: 20px;
-            text-align: center;
-        }
+    .glass-panel {
+      backdrop-filter: blur(5px);
+      background: rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      margin: 50px auto;
+      max-width: 1000px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      color: #333;
+    }
 
-        .blue-strip.dark-mode {
-            background-color: #005f87;
-        }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 20px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
 
-        .template-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            justify-content: space-around;
-        }
+    .text-section {
+      max-width: 500px;
+      margin: auto;
+    }
 
-        .template-cards .card {
-            background-color: #A3B18A;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            color: #588157;
-        }
+    .text-section h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
 
-        .template-cards .card.dark-mode {
-            background-color: #444;
-            color: #f5f5f5;
-        }
+    .text-section h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
 
-        .footer {
-            background-color: #588157;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
+    .text-section p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
 
-        .footer.dark-mode {
-            background-color: #444;
-        }
+    .sign-up-btn {
+      background-color: #588157;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: background-color 0.3s ease;
+    }
 
-        .testimonial-section {
-            background-color: #f5f5f5;
-            padding: 50px 20px;
-            text-align: center;
-        }
+    .sign-up-btn:hover {
+      background-color: #446c48;
+    }
 
-        .testimonial-section.dark-mode {
-            background-color: #333;
-        }
+    .image-section img {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 10px;
+      margin-left: 20px;
+      margin-top: 20px;
+    }
 
-        .testimonial {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    .blue-strip {
+      background-color: #6ec1e4;
+      padding: 20px;
+      text-align: center;
+    }
 
-        .testimonial.dark-mode {
-            background-color: #444;
-        }
+    .template-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+    }
 
-        .testimonial img {
-            max-width: 100px;
-            margin-right: 20px;
-            border-radius: 50%;
-        }
-    </style>
+    .template-cards .card {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      color: #588157;
+    }
+
+    .footer {
+      background-color: #588157;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .testimonial-section {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .testimonial-carousel {
+      overflow: hidden;
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      will-change: transform;
+    }
+
+    .testimonial-card {
+      flex: 0 0 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      margin: 0 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #333;
+    }
+
+    body.dark-mode .testimonial-card {
+      background-color: #444;
+      color: #f5f5f5;
+    }
+
+    .testimonial-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testimonial-dots {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .testimonial-dots span {
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #ccc;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    .testimonial-dots .active {
+      background-color: #333;
+    }
+
+    .testimonial-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(88, 129, 87, 0.8);
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s ease;
+    }
+
+    .testimonial-arrow:hover {
+      background: rgba(68, 108, 72, 1);
+    }
+
+    .testimonial-arrow.left {
+      left: 0;
+    }
+
+    .testimonial-arrow.right {
+      right: 0;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .image-section img {
+        margin: 20px auto 0;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar-right {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .testimonial-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .testimonial-carousel {
+        padding: 0 20px;
+      }
+
+      .testimonial-arrow.left {
+        left: 5px;
+      }
+
+      .testimonial-arrow.right {
+        right: 5px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <img src="CareConnectImages/CareConnectLogo.png" alt="Care Connect Logo" style="height: 70px;">
-        </div>
-        <div class="nav-links">
-            <a href="#">Sign up</a>
-            <a href="#">About Us</a>
-        </div>
-        <button id="darkModeToggle">Dark Mode</button>
+  <div class="navbar">
+    <div class="navbar-left">
+      <a href="index.html">
+        <img src="CareConnectImages/CareConnectLogo.png" alt="CareConnect Logo" class="logo" />
+      </a>
+      <span class="site-name">CareConnect</span>
     </div>
+    <div class="navbar-right">
+      <a href="CareConnect_chat.html">Carebot</a>
+      <a href="signup.html">Sign-In</a>
+      <a href="CareConnect_AboutUs.HTML">About</a>
+      <button class="theme-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+    </div>
+  </div>
+
+  <div class="glass-panel">
     <div class="container">
         <div class="text-section">
             <h1>Care Connect an AI Health Chatbot</h1>
@@ -181,69 +347,147 @@
             <img src="CareConnectImages/HPIdea1.jpg" alt="Care Connect App Screens">
         </div>
     </div>
-    <div class="blue-strip">
-        <h2>The Intelligent Health Chatbot</h2>
-        <h3>As endorsed by top healthcare professionals</h3>
-    </div>
-    <div class="template-cards">
-        <div class="card">
-            <h3>Professional Guidance</h3>
-            <p>Get clear explanations and understand when to seek professional help.</p>
-            <a href="#">Learn more</a>
-        </div>
-        <div class="card">
-            <h3>Medical Information</h3>
-            <p>Access reliable medical information and explanations of medical terms.</p>
-            <a href="#">Learn more</a>
-        </div>
-        <div class="card">
-            <h3>Uhh</h3>
-            <p>Worry less with our highly accurate results.</p>
-            <a href="#">Learn more</a>
-        </div>
-    </div>
-    <div class="testimonial-section">
-        <h2>User Testimonials</h2>
-        <p>Insights from users revolutionizing their health using AI</p>
-        <div class="testimonial">
-            <img src="CareConnectImages/HPIdea3.jpg" alt="User Photo">
-            <div class="content">
-                <h3>Emily Johnson</h3>
-                <p>Elementary teacher at ParkHide ISD</p>
-                <p>"After struggling to ... in a busy work environment, this chatbot has completely transformed... It takes the guesswork out with incredible accuracy—!"</p>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <h2>The #1 Intelligent Health Chatbot</h2>
-        <p>As endorsed by top ...</p>
-        <h6>*Not a factual claim (currently).</h6>
-    </div>
-    <script>
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-        const cards = document.querySelectorAll('.template-cards .card');
-        const testimonialSection = document.querySelector('.testimonial-section');
+  </div>
 
-        // Check and apply saved preference
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
-            cards.forEach(card => card.classList.add('dark-mode'));
-            testimonialSection.classList.add('dark-mode');
-        }
+  <div class="blue-strip">
+    <h2>The Intelligent Health Chatbot</h2>
+    <h3>Endorsed by leading healthcare professionals</h3>
+  </div>
 
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            cards.forEach(card => card.classList.toggle('dark-mode'));
-            testimonialSection.classList.toggle('dark-mode');
+  <div class="testimonial-section">
+    <h2>User Testimonials</h2>
+    <p>Insights from users transforming their health with CareConnect.</p>
+  
+    <div class="testimonial-carousel">
+      <button class="testimonial-arrow left" id="prevBtn">&#10094;</button>
+  
+      <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial-card">
+          <img src="CareConnectImages/HPIdea3.jpg" alt="User Photo" />
+          <div class="content">
+            <h3>Emily Johnson</h3>
+            <p>Elementary teacher at ParkHide ISD</p>
+            <p>"In a busy work environment, I don't always have time to go see the doctor. CareConnect has completely transformed how I access health guidance—it’s easy to use!"</p>
+          </div>
+        </div>
+  
+        <div class="testimonial-card">
+          <img src="CareConnectImages/HPIdea3.jpg" alt="User Photo" />
+          <div class="content">
+            <h3>Marcus Lee</h3>
+            <p>Freelance Designer</p>
+            <p>"I wanted quick, smart help about some symptoms I was experiencing. This AI got it right!"</p>
+          </div>
+        </div>
+  
+        <div class="testimonial-card">
+          <img src="CareConnectImages/HPIdea3.jpg" alt="User Photo" />
+          <div class="content">
+            <h3>Rosie Wilkins</h3>
+            <p>Walmart Cashier</p>
+            <p>"I work such a crazy schedule! I started feeling sick and needed some immediate advice (My PCP had a two-week backup). This gave me such a quick response which helped me get better faster. CareConnect is awesome!"</p>
+          </div>
+        </div>
+  
+        <div class="testimonial-card">
+          <img src="CareConnectImages/HPIdea3.jpg" alt="User Photo" />
+          <div class="content">
+            <h3>Tony Jones</h3>
+            <p>Anonymous</p>
+            <p>"Five stars, wish I could give it more."</p>
+          </div>
+        </div>
+      </div>
+  
+      <button class="testimonial-arrow right" id="nextBtn">&#10095;</button>
+      <div class="testimonial-dots" id="dots"></div>
+    </div>
+  </div>
+  
 
-            // Save user preference
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                localStorage.removeItem('darkMode');
-            }
-        });
-    </script>
+  <div class="footer">
+    <h2>The #1 Intelligent Health Chatbot</h2>
+    <p>As endorsed by top professionals</p>
+    <h6>*Not a factual claim (currently).</h6>
+  </div>
+
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const icon = darkModeToggle.querySelector('i');
+    const body = document.body;
+
+    function setDarkMode(enabled) {
+      if (enabled) {
+        body.classList.add('dark-mode');
+        icon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        body.classList.remove('dark-mode');
+        icon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.removeItem('darkMode');
+      }
+    }
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      setDarkMode(true);
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      setDarkMode(!body.classList.contains('dark-mode'));
+    });
+
+    // Testimonial carousel logic
+    const track = document.querySelector('.testimonial-track');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('dots');
+    let currentIndex = 0;
+    let autoplayInterval;
+
+    cards.forEach((_, idx) => {
+      const dot = document.createElement('span');
+      if (idx === 0) dot.classList.add('active');
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('span');
+
+    function updateCarousel(index) {
+      const offset = -index * 100;
+      track.style.transform = `translateX(${offset}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    function goToSlide(index) {
+      currentIndex = (index + cards.length) % cards.length;
+      updateCarousel(currentIndex);
+    }
+
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+    dots.forEach((dot, idx) => dot.addEventListener('click', () => goToSlide(idx)));
+
+    track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+    track.addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      if (endX < startX - 50) goToSlide(currentIndex + 1);
+      else if (endX > startX + 50) goToSlide(currentIndex - 1);
+    });
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(() => goToSlide(currentIndex + 1), 6000);
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+
+    document.querySelector('.testimonial-carousel').addEventListener('mouseenter', stopAutoplay);
+    document.querySelector('.testimonial-carousel').addEventListener('mouseleave', startAutoplay);
+
+    startAutoplay();
+  </script>
 </body>
 </html>

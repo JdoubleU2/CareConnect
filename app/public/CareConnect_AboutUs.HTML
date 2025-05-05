@@ -10,29 +10,29 @@
     :root {
       --bg-color: transparent;
       --text-color: #333;
-      --accent-color: hsl(121, 54%, 16%);
+      --accent-color: #588157;
       --background-image: url('https://images.unsplash.com/photo-1692183365525-d89941cfb4a5?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     }
 
-    [data-theme="light"] {
-      --bg-color: #121212;
-      --text-color: #14911e;
-      --accent-color: #00c896;
-      --background-image: none;
-      background-color: #121212;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      margin: 0;
       font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       background: var(--background-image) no-repeat center center fixed;
       background-size: cover;
       background-attachment: fixed;
       color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #333;
+      color: #f5f5f5;
+      background-image: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     .navbar {
@@ -55,7 +55,7 @@
     .navbar-right {
       display: flex;
       align-items: center;
-      gap: 40px;
+      gap: 30px;
     }
 
     .logo {
@@ -84,46 +84,43 @@
       color: #a3b18a;
     }
 
-    .toggle-switch {
-      display: flex;
-      align-items: center;
-    }
-
-    .toggle-switch input {
-      height: 0;
-      width: 0;
-      visibility: hidden;
-    }
-
-    .toggle-switch label {
+    .theme-toggle {
+      background: none;
+      border: none;
       cursor: pointer;
-      text-indent: -9999px;
-      width: 50px;
-      height: 25px;
-      background: grey;
-      display: block;
-      border-radius: 100px;
-      position: relative;
+      font-size: 1.5rem;
+      color: white;
+      transition: color 0.3s ease;
     }
 
-    .toggle-switch label:after {
-      content: '';
-      position: absolute;
-      left: 5px;
-      top: 5px;
-      width: 15px;
-      height: 15px;
-      background: white;
-      border-radius: 90px;
-      transition: 0.3s;
+    body.dark-mode .theme-toggle {
+      color: #f5f5f5;
     }
 
-    .toggle-switch input:checked + label {
-      background: #2ecc71;
+    .glass-panel {
+      backdrop-filter: blur(5px);
+      background: rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      margin: 50px auto;
+      max-width: 900px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
     }
 
-    .toggle-switch input:checked + label:after {
-      left: calc(100% - 5px - 15px);
+    h1, h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #auto-type {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+      min-height: 40px;
     }
 
     .chatbot-bubble {
@@ -146,48 +143,6 @@
         transform: translateY(0);
         opacity: 1;
       }
-    }
-
-    h1, h2 {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    #auto-type {
-      font-size: 20px;
-      text-align: center;
-      margin-bottom: 30px;
-      min-height: 40px;
-    }
-
-    .glass-panel {
-      backdrop-filter: blur(5px);
-      background: rgba(255, 255, 255, 0.2);
-      padding: 30px;
-      margin: 50px auto;
-      max-width: 900px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    section {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
-    section h2 {
-      margin-bottom: 15px;
-    }
-
-    section p {
-      font-size: 18px;
-      line-height: 1.6;
     }
 
     .team {
@@ -272,33 +227,27 @@
     }
   </style>
 </head>
-
 <body>
   <!-- Navigation Bar -->
   <div class="navbar">
     <div class="navbar-left">
       <a href="index.html">
-        <img src="CareConnectImages/CareConnectLogo.png" alt="Care Connect Logo" class="logo" />
+        <img src="CareConnectImages/CareConnectLogo.png" alt="CareConnect Logo" class="logo" />
       </a>
       <span class="site-name">CareConnect</span>
     </div>
     <div class="navbar-right">
       <a href="index.html">Home</a>
       <a href="CareConnect_chat.html">Carebot</a>
-      <a href="signup.html">Sign In/Up</a>
-      <div class="toggle-switch">
-        <input type="checkbox" id="theme-toggle" />
-        <label for="theme-toggle">Toggle Theme</label>
-      </div>
+      <a href="signup.html">Sign In</a>
+      <button class="theme-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
     </div>
   </div>
 
-  <!-- Chatbot Welcome -->
   <div class="chatbot-bubble">Hello there! Welcome to CareConnect!</div>
-
   <div id="auto-type"></div>
 
-  <!-- Sections -->
+  <!-- Content Panels -->
   <div class="glass-panel" id="about">
     <h1>About Our Chatbot</h1>
     <p>
@@ -310,7 +259,6 @@
     <p>
       It’s important to note that CareConnect does <strong>not</strong> replace professional medical advice, diagnosis, or treatment. It is intended to complement—not substitute—the guidance of licensed healthcare providers.
     </p>
-    <div id="auto-type"></div>
   </div>
 
   <div class="glass-panel" id="mission">
@@ -330,7 +278,7 @@
     <p>CareConnect is the place you can trust. We're here to take care of you!</p>
   </div>
 
-  <!-- Meet the Team -->
+  <!-- Team Section -->
   <h2>Meet the Team</h2>
   <div class="team">
     <div class="team-member">
@@ -379,8 +327,9 @@
     </div>
   </div>
 
-  <!-- Auto typing script -->
+  <!-- Scripts -->
   <script>
+    // Auto typing effect
     const text = "CareConnect makes conversations natural, informative, and friendly.";
     let index = 0;
     let isDeleting = false;
@@ -408,6 +357,31 @@
     }
 
     typeEffect();
+
+    // Theme toggle logic
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const icon = darkModeToggle.querySelector('i');
+    const body = document.body;
+
+    function setDarkMode(enabled) {
+      if (enabled) {
+        body.classList.add('dark-mode');
+        icon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        body.classList.remove('dark-mode');
+        icon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.removeItem('darkMode');
+      }
+    }
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      setDarkMode(true);
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      setDarkMode(!body.classList.contains('dark-mode'));
+    });
   </script>
 </body>
 </html>

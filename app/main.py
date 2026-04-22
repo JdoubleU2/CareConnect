@@ -1,3 +1,48 @@
+# ===== EMERGENCY KEYWORDS =====
+EMERGENCY_KEYWORDS = [
+    "chest pain", "can't breathe", "difficulty breathing", "shortness of breath",
+    "asthma attack", "seizure", "heart attack", "stroke", "unconscious",
+    "unable to stand", "uncontrolled bleeding", "poison", "overdose",
+    "suicidal", "head injury", "confused", "slurred speech",
+    "rapid heartbeat", "vomiting blood"
+]
+
+def emergency_override(user_message):
+    message = user_message.lower()
+    return any(keyword in message for keyword in EMERGENCY_KEYWORDS)
+
+
+# ===== CONSISTENCY CHECKER =====
+def consistency_checker(response):
+    prohibited_words = ["diagnose", "cure"]
+
+    for word in prohibited_words:
+        if word in response.lower():
+            response = response.replace(word, "suggest")
+
+    if "consult a healthcare professional" not in response.lower():
+        response += " Please consult a healthcare professional for medical advice."
+
+    return response
+
+
+# ===== SUMMARY GENERATOR =====
+def extract_symptoms(user_input):
+    symptoms = user_input.lower()
+    extracted = []
+
+    if "stomach" in symptoms or "abdominal" in symptoms:
+        extracted.append("stomach pain")
+    if "headache" in symptoms:
+        extracted.append("headache")
+    if "tooth" in symptoms:
+        extracted.append("toothache")
+
+    if not extracted:
+        extracted.append("No clear symptoms provided")
+
+    return extracted
+    
 from fastapi import FastAPI, Request, status, HTTPException # Import status
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
@@ -65,43 +110,40 @@ class LLMInput(BaseModel):
 async def invoke_llm(input_data: LLMInput):
     try:
         user_input = input_data.input
-        logger.info(f"Processing input: {user_input}")
 
-        # --- Prompt Engineering ---
-        # Format the input to guide the model to respond like an assistant
-        # This format is common for chat models like Llama variants
-        formatted_prompt = f"User: {user_input}\nAssistant:"
+        # 🚨 EMERGENCY CHECK
+        if emergency_override(user_input):
+            return {
+                "output": "⚠️ This may be a medical emergency. Please seek immediate medical attention or call emergency services."
+            }
 
-        logger.info(f"Sending formatted prompt to LLM: {formatted_prompt}")
+        # 🧠 CONTROLLED PROMPT (prevents hallucination)
+        formatted_prompt = f"""
+You are a healthcare assistant.
 
-        # Use ainvoke for async operation with Langchain
+ONLY provide general advice.
+DO NOT diagnose.
+DO NOT add symptoms not mentioned.
+
+User: {user_input}
+Assistant:
+"""
+
         response = await llm.ainvoke(formatted_prompt)
 
-        logger.info("✅ LLM raw response generated successfully")
-        logger.info(f"Raw LLM response: {response}") # Log raw response for debugging
-
-        # --- Post-processing (Optional but Recommended) ---
-        # The model's output might still include the "Assistant:" part or leading/trailing whitespace.
-        # We can trim this. It might also sometimes include a stray newline or space before the actual response.
         processed_response = response.strip()
 
-        # Some models might regenerate the "Assistant:" tag, let's remove it if it's at the start
         if processed_response.lower().startswith("assistant:"):
-             processed_response = processed_response[len("assistant:"):].strip()
+            processed_response = processed_response[len("assistant:"):].strip()
 
-        logger.info(f"Processed LLM response: {processed_response}")
+        # ✅ CONSISTENCY CHECK
+        processed_response = consistency_checker(processed_response)
 
         return {"output": processed_response}
 
     except Exception as e:
-        logger.error(f"❌ Error in LLM invocation: {str(e)}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail={
-                "error": "Failed to get response from AI",
-                "detail": str(e)
-            }
-        )
+        logger.error(f"❌ Error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to get response")
 
 # --- Health Check ---
 @app.get("/health")
@@ -121,6 +163,45 @@ async def health_check():
         "endpoint_status": endpoint_status
     }
 
+# Summary Endpoint
+@app.post("/summary")
+async def generate_summary_endpoint(input_data: LLMInput):
+    try:
+        conversation = input_data.input
+
+        # Extract symptoms (same logic as Colab)
+        symptoms = extract_symptoms(conversation)
+        symptoms_text = "\n".join([f"- {s}" for s in symptoms])
+
+        summary_prompt = f"""
+Based on this conversation, provide:
+
+Advice:
+- ...
+
+Next Steps:
+- ...
+
+Conversation:
+{conversation}
+
+Rules:
+- Do NOT add symptoms
+- Keep it concise
+"""
+
+        response = await llm.ainvoke(summary_prompt)
+        output = response.strip()
+
+        return {
+            "symptoms": symptoms_text,
+            "summary": output
+        }
+
+    except Exception as e:
+        logger.error(f"❌ Summary Error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Summary failed")
+        
 # --- Static Files ---
 # Mount the public directory to serve static files
 # IMPORTANT: Mounted AFTER API routes to prevent potential conflicts

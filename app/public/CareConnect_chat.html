@@ -2,56 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - CareConnect</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareConnect Chat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
     :root {
-      --bg-color: transparent;
-      --text-color: #333;
-      --accent-color: #588157;
-      --background-image: url('https://images.unsplash.com/photo-1692183365525-d89941cfb4a5?q=80&w=2068&auto=format&fit=crop');
+      --primary-color: #588157;
+      --secondary-color: #3498db;
+      --text-color: #2c3e50;
+      --dark-card: #34495e;
+      --transition: all 0.3s ease;
     }
 
-    html {
-      scroll-behavior: smooth;
-      font-size: 100%;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 480px) {
-      html {
-        font-size: 90%;
-      }
+    @keyframes slideIn {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes messagePop {
+      0% { transform: scale(0.8); opacity: 0; }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      height: 100%;
     }
 
     body {
-      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--background-image) no-repeat center center fixed;
-      background-size: cover;
-      background-attachment: fixed;
+      background-color: #588157;
       color: var(--text-color);
-      transition: background-color 0.3s, color 0.3s;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
     }
 
     body.dark-mode {
-      background-color: #333;
-      color: #f5f5f5;
-      background-image: none;
+      color: #fff;
+      background-color: #3a5a40;
     }
 
     .navbar {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      background-color: var(--accent-color);
+      background-color: var(--primary-color);
       padding: 20px 30px;
       position: sticky;
       top: 0;
       z-index: 1000;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    body.dark-mode .navbar {
+      background: rgba(44, 62, 80, 0.95);
     }
 
     .navbar-left {
@@ -64,8 +86,6 @@
       display: flex;
       align-items: center;
       gap: 30px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
     .logo {
@@ -87,11 +107,13 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .navbar a:hover,
     .navbar button:hover {
       color: #a3b18a;
+      transform: translateY(-2px);
     }
 
     .theme-toggle {
@@ -107,222 +129,370 @@
       color: #f5f5f5;
     }
 
-    .floating-nav {
+    .chat-container {
+      flex: 1;
+      max-width: 1000px;
+      width: 100%;
+      margin: 30px auto;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 70vh;
+      animation: scaleIn 0.8s ease-out;
+    }
+
+    .dark-mode .chat-container {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .message {
+      padding: 10px 15px;
+      border-radius: 12px;
+      max-width: 75%;
+      line-height: 1.5;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      animation: messagePop 0.3s ease-out;
+    }
+
+    .user-message {
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      color: white;
+      align-self: flex-end;
+      transform-origin: right bottom;
+    }
+
+    .assistant-message {
+      background: #fff;
+      color: var(--text-color);
+      align-self: flex-start;
+      transform-origin: left bottom;
+    }
+
+    .dark-mode .assistant-message {
+      background: var(--dark-card);
+      color: white;
+    }
+
+    .emergency-message {
+      background: linear-gradient(135deg, #c0392b, #e67e22) !important;
+      color: #fff !important;
+      font-weight: 600;
+      border-left: 5px solid #fff;
+    }
+
+    .summary-panel {
+      margin-bottom: 16px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(88, 129, 87, 0.12);
+      border: 1px solid rgba(88, 129, 87, 0.25);
+      color: var(--text-color);
+      white-space: pre-wrap;
       display: none;
     }
 
-    @media (max-width: 768px) {
-      .floating-nav {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        justify-content: space-around;
-        background-color: var(--accent-color);
-        padding: 10px 0;
-        z-index: 9999;
-      }
-
-      .floating-nav a {
-        color: white;
-        font-size: 20px;
-        text-decoration: none;
-      }
-
-      .floating-nav a:hover {
-        color: #a3b18a;
-      }
+    .summary-panel.visible {
+      display: block;
+      animation: fadeIn 0.25s ease-out;
     }
 
-    .glass-panel {
-      backdrop-filter: blur(5px);
-      background: rgba(255, 255, 255, 0.2);
-      padding: 30px;
-      margin: 50px auto;
-      max-width: 900px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #333;
+    .dark-mode .summary-panel {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #fff;
     }
 
-    h1, h2 {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    #auto-type {
-      font-size: 20px;
-      text-align: center;
-      margin-bottom: 30px;
-      min-height: 40px;
-    }
-
-    .chatbot-bubble {
-      background: var(--accent-color);
-      color: white;
-      padding: 15px 20px;
-      border-radius: 20px;
-      margin: 40px auto 20px auto;
-      text-align: center;
-      width: fit-content;
-      animation: slideIn 1s ease-out;
-    }
-
-    @keyframes slideIn {
-      from { transform: translateY(-30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .team {
+    .input-area {
       display: flex;
+      gap: 10px;
+      align-items: stretch;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
-      padding-bottom: 60px;
     }
 
-    .team-member {
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      width: 100%;
-      max-width: 280px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
+    textarea {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: none;
+      font-family: 'Poppins', sans-serif;
+      transition: var(--transition);
+    }
+
+    textarea:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark-mode textarea {
+      background: var(--dark-card);
+      color: white;
+      border-color: #555;
+    }
+
+    button#sendButton {
+      min-width: 120px;
+      padding: 10px 20px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      color: #333;
+      transition: var(--transition);
+      animation: fadeIn 0.5s ease-out 0.3s backwards;
     }
 
-    .team-member:hover {
-      transform: translateY(-8px);
+    button#sendButton:hover {
+      background: var(--secondary-color);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
-    .team-member img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      border: 3px solid var(--accent-color);
+    button#sendButton:active {
+      transform: translateY(0) scale(0.95);
     }
 
-    .team-member h3 { margin: 10px 0 5px; font-size: 20px; }
-    .team-member p { font-size: 16px; color: #555; }
-
-    .social-icons {
-      margin-top: 10px;
+    button#summaryButton {
+      min-width: 160px;
+      padding: 10px 20px;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
     }
 
-    .social-icons a {
-      color: var(--accent-color);
-      font-size: 22px;
-      margin: 0 8px;
-      text-decoration: none;
-      transition: color 0.3s;
+    button#summaryButton:hover {
+      background: #1f2d3a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
-    .social-icons a:hover {
-      color: #000;
+    button#summaryButton:disabled,
+    button#sendButton:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
     }
-
-    body.dark-mode .team-member {
-      background-color: rgba(255, 255, 255, 0.1);
-      color: #f5f5f5;
-    }
-    body.dark-mode .team-member p { color: #ccc; }
-    body.dark-mode .team-member h3 { color: #fff; }
-    body.dark-mode .social-icons a { color: #f5f5f5; }
-    body.dark-mode .social-icons a:hover { color: #a3b18a; }
   </style>
 </head>
 <body>
-  <div class="navbar">
+  <nav class="navbar">
     <div class="navbar-left">
-      <a href="index.html"><img src="CareConnectImages/CareConnectLogo.png" alt="CareConnect Logo" class="logo" /></a>
+      <a href="index.html">
+        <img src="CareConnectImages/CareConnectLogo.png" alt="CareConnect Logo" class="logo" />
+      </a>
       <span class="site-name">CareConnect</span>
     </div>
     <div class="navbar-right">
       <a href="index.html">Home</a>
-      <a href="CareConnect_chat.html">Carebot</a>
-      <a href="signup.html">Sign In</a>
+      <a href="CareConnect_AboutUs.HTML">About</a>
       <button class="theme-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+    </div>
+  </nav>
+
+  <div class="chat-container">
+    <div class="chat-messages" id="chatMessages">
+      <div class="message assistant-message">
+        Hello! I'm your CareConnect AI Health Assistant. How can I help you today?
+      </div>
+    </div>
+    <div id="summaryPanel" class="summary-panel"></div>
+    <div class="input-area">
+      <textarea id="userInput" placeholder="Type your message here..." rows="1"></textarea>
+      <button id="summaryButton" type="button">Summarize chat</button>
+      <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
     </div>
   </div>
 
-  <div class="floating-nav">
-    <a href="index.html"><i class="fas fa-home"></i></a>
-    <a href="CareConnect_chat.html"><i class="fas fa-robot"></i></a>
-    <a href="signup.html"><i class="fas fa-user"></i></a>
-  </div>
-
-  <div class="chatbot-bubble">Hello there! Welcome to CareConnect!</div>
-  <div id="auto-type"></div>
-
-  <div class="glass-panel" id="about">
-    <h1>About Our Chatbot</h1>
-    <p>CareConnect is an AI-powered health assistant designed to help users better understand medical symptoms...</p>
-  </div>
-
-  <div class="glass-panel" id="mission">
-    <h2>Our Mission</h2>
-    <p>We aim to make technology more human, accessible, and helpful...</p>
-  </div>
-
-  <div class="glass-panel" id="vision">
-    <h2>Our Vision</h2>
-    <p>Imagine a world where you can obtain accurate, personalized medical information...</p>
-  </div>
-
-  <div class="glass-panel" id="goals">
-    <h2>Our Future Goals</h2>
-    <p>At CareConnect, we’re working to make healthcare more personal and secure...</p>
-  </div>
-
-  <h2>Meet the Team</h2>
-  <div class="team">
-    <!-- Team members  here -->
-  </div>
-
   <script>
-    const text = "CareConnect makes conversations natural, informative, and friendly.";
-    let index = 0;
-    let isDeleting = false;
-
-    function typeEffect() {
-      const typingElement = document.getElementById("auto-type");
-      if (!typingElement) return;
-
-      typingElement.innerHTML = isDeleting
-        ? text.substring(0, index--)
-        : text.substring(0, index++);
-
-      if (index === text.length) isDeleting = true;
-      if (index === 0) isDeleting = false;
-
-      setTimeout(typeEffect, isDeleting ? 30 : 50);
-    }
-
-    typeEffect();
-
-    const toggle = document.getElementById('darkModeToggle');
-    const icon = toggle.querySelector('i');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const icon = darkModeToggle.querySelector('i');
     const body = document.body;
 
     function setDarkMode(enabled) {
-      body.classList.toggle('dark-mode', enabled);
-      icon.classList.replace(enabled ? 'fa-moon' : 'fa-sun', enabled ? 'fa-sun' : 'fa-moon');
-      localStorage.setItem('darkMode', enabled ? 'enabled' : 'disabled');
+      if (enabled) {
+        body.classList.add('dark-mode');
+        icon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        body.classList.remove('dark-mode');
+        icon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.removeItem('darkMode');
+      }
     }
 
-    setDarkMode(localStorage.getItem('darkMode') === 'enabled');
-    toggle.addEventListener('click', () => setDarkMode(!body.classList.contains('dark-mode')));
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      setDarkMode(true);
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      const isDark = body.classList.contains('dark-mode');
+      setDarkMode(!isDark);
+    });
+
+    const sendButton = document.getElementById('sendButton');
+    const summaryButton = document.getElementById('summaryButton');
+    const userInput = document.getElementById('userInput');
+    const chatMessages = document.getElementById('chatMessages');
+    const summaryPanel = document.getElementById('summaryPanel');
+    const conversationHistory = [];
+    const FALLBACK_API_BASE_URL = 'https://careconnect-backend-387872558831.us-central1.run.app';
+    const ORIGIN = window.location.origin && window.location.origin !== 'null' ? window.location.origin : '';
+    const IS_FIREBASE_HOST = /(?:web\.app|firebaseapp\.com)$/i.test(window.location.hostname);
+    const API_BASE_URL = IS_FIREBASE_HOST
+      ? `${ORIGIN}/api`
+      : (ORIGIN || FALLBACK_API_BASE_URL);
+
+    console.info('[CareConnect] API base URL:', API_BASE_URL);
+
+    function appendMessage(text, className) {
+      const message = document.createElement('div');
+      message.className = `message ${className}`;
+      message.innerText = text;
+      chatMessages.appendChild(message);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      return message;
+    }
+
+    function setSummary(text) {
+      summaryPanel.innerText = text;
+      summaryPanel.classList.add('visible');
+    }
+
+    async function sendMessage() {
+      const input = userInput.value.trim();
+      if (!input) return;
+
+      appendMessage(input, 'user-message');
+      conversationHistory.push({ role: 'user', content: input });
+      summaryPanel.classList.remove('visible');
+      summaryPanel.innerText = '';
+
+      userInput.value = '';
+      sendButton.disabled = true;
+      summaryButton.disabled = true;
+
+      const assistantMsg = appendMessage('Thinking...', 'assistant-message');
+
+      try {
+        const payload = {
+          inputs: input,
+          parameters: {
+            max_new_tokens: 200,
+            temperature: 0.7,
+            top_p: 0.9,
+            do_sample: true
+          }
+        };
+
+        const invokeUrl = `${API_BASE_URL}/llm/invoke`;
+        console.debug('[CareConnect] invoke request', { url: invokeUrl, payload });
+
+        const response = await fetch(invokeUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json().catch(() => ({}));
+        console.debug('[CareConnect] invoke response', { status: response.status, data });
+
+        if (!response.ok) {
+          const errorDetail = data?.detail?.error || data?.detail?.detail || data?.detail || data?.error || response.statusText;
+          throw new Error(`Request failed (${response.status}): ${errorDetail}`);
+        }
+
+        const output = typeof data.output === 'string' ? data.output.trim() : '';
+        if (!output) {
+          throw new Error('No output was returned by the AI endpoint.');
+        }
+
+        assistantMsg.innerText = output;
+        assistantMsg.classList.toggle('emergency-message', Boolean(data.emergency_detected));
+        conversationHistory.push({ role: 'assistant', content: output });
+      } catch (err) {
+        assistantMsg.innerText = `Error: ${err instanceof Error ? err.message : 'Unable to get a response.'}`;
+      }
+
+      sendButton.disabled = false;
+      summaryButton.disabled = conversationHistory.length === 0;
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    async function summarizeChat() {
+      if (!conversationHistory.length) {
+        setSummary('Start a conversation first, then I can summarize it.');
+        return;
+      }
+
+      summaryButton.disabled = true;
+      sendButton.disabled = true;
+      setSummary('Generating summary...');
+
+      try {
+        const summaryUrl = `${API_BASE_URL}/llm/summary`;
+        console.debug('[CareConnect] summary request', { url: summaryUrl, turns: conversationHistory.length });
+
+        const response = await fetch(summaryUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            conversation: conversationHistory,
+            parameters: {
+              max_new_tokens: 180,
+              temperature: 0.4,
+              top_p: 0.9,
+              do_sample: true
+            }
+          })
+        });
+
+        const data = await response.json().catch(() => ({}));
+        console.debug('[CareConnect] summary response', { status: response.status, data });
+
+        if (!response.ok) {
+          const errorDetail = data?.detail?.error || data?.detail?.detail || data?.detail || data?.error || response.statusText;
+          throw new Error(`Request failed (${response.status}): ${errorDetail}`);
+        }
+
+        const summary = typeof data.summary === 'string' ? data.summary.trim() : '';
+        if (!summary) {
+          throw new Error('No summary was returned by the AI endpoint.');
+        }
+
+        setSummary(summary);
+      } catch (err) {
+        setSummary(`Error: ${err instanceof Error ? err.message : 'Unable to summarize the chat.'}`);
+      } finally {
+        sendButton.disabled = false;
+        summaryButton.disabled = conversationHistory.length === 0;
+      }
+    }
+
+    sendButton.addEventListener('click', sendMessage);
+    summaryButton.addEventListener('click', summarizeChat);
+    userInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
   </script>
 </body>
 </html>
-

@@ -10,7 +10,7 @@
       {
         "source": "/api/**",
         "run": {
-          "serviceId": "careconnect-llm-api",
+          "serviceId": "careconnect-backend",
           "region": "us-central1"
         }
       }

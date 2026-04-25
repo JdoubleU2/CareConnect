@@ -45,17 +45,18 @@ def test_server():
         endpoint_url = "https://l3w62k457vzkn0yj.us-east4.gcp.endpoints.huggingface.cloud"
         headers = {
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {api_key}"
+            "Authorization": f"Bearer {api_key}",
+            "Accept": "application/json"
         }
         
         data = {
-            "model": "JdoubleU/CareConnect",
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "CareConnect. Are you ALIVE!?"
-                }
-            ]
+            "inputs": "CareConnect. Are you ALIVE!?",
+            "parameters": {
+                "max_new_tokens": 100,
+                "temperature": 0.7,
+                "top_p": 0.95,
+                "do_sample": True
+            }
         }
         
         response = requests.post(

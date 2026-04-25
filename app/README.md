@@ -14,9 +14,15 @@ The web application consists of three main components:
 The backend server (`main.py`) is built using FastAPI and provides the following functionality:
 
 ### API Endpoints
-- `/chat`: Main endpoint for handling chat interactions with the AI model
+- `/llm/invoke`: Main endpoint for handling chat interactions with the AI model
+- `/llm/summary`: Generates a conversation summary from the current chat history
 - `/health`: Health check endpoint for monitoring
 - `/docs`: Auto-generated API documentation (Swagger UI)
+
+### Safety Features
+- Emergency keyword override for high-risk symptoms such as chest pain, stroke symptoms, shortness of breath, and uncontrolled bleeding
+- Emergency responses bypass the model and immediately return a safety message
+- Summary generation is handled by the backend so the UI can request a concise recap of the conversation
 
 ### Server Features
 - Asynchronous request handling

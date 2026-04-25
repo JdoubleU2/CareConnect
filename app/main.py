@@ -1,3 +1,48 @@
+# ===== EMERGENCY KEYWORDS =====
+EMERGENCY_KEYWORDS = [
+    "chest pain", "can't breathe", "difficulty breathing", "shortness of breath",
+    "asthma attack", "seizure", "heart attack", "stroke", "unconscious",
+    "unable to stand", "uncontrolled bleeding", "poison", "overdose",
+    "suicidal", "head injury", "confused", "slurred speech",
+    "rapid heartbeat", "vomiting blood"
+]
+
+def emergency_override(user_message):
+    message = user_message.lower()
+    return any(keyword in message for keyword in EMERGENCY_KEYWORDS)
+
+
+# ===== CONSISTENCY CHECKER =====
+def consistency_checker(response):
+    prohibited_words = ["diagnose", "cure"]
+
+    for word in prohibited_words:
+        if word in response.lower():
+            response = response.replace(word, "suggest")
+
+    if "consult a healthcare professional" not in response.lower():
+        response += " Please consult a healthcare professional for medical advice."
+
+    return response
+
+
+# ===== SUMMARY GENERATOR =====
+def extract_symptoms(user_input):
+    symptoms = user_input.lower()
+    extracted = []
+
+    if "stomach" in symptoms or "abdominal" in symptoms:
+        extracted.append("stomach pain")
+    if "headache" in symptoms:
+        extracted.append("headache")
+    if "tooth" in symptoms:
+        extracted.append("toothache")
+
+    if not extracted:
+        extracted.append("No clear symptoms provided")
+
+    return extracted
+    
 from fastapi import FastAPI, Request, status, HTTPException # Import status
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
@@ -326,7 +371,8 @@ async def invoke_llm(input_data: LLMInput):
                 "emergency_detected": True,
             }
 
-        logger.info(f"Processed LLM response: {processed_response}")
+        # ✅ CONSISTENCY CHECK
+        processed_response = consistency_checker(processed_response)
 
         return {
             "output": processed_response,
@@ -424,6 +470,45 @@ async def health_check():
         "endpoint_status": endpoint_status
     }
 
+# Summary Endpoint
+@app.post("/summary")
+async def generate_summary_endpoint(input_data: LLMInput):
+    try:
+        conversation = input_data.input
+
+        # Extract symptoms (same logic as Colab)
+        symptoms = extract_symptoms(conversation)
+        symptoms_text = "\n".join([f"- {s}" for s in symptoms])
+
+        summary_prompt = f"""
+Based on this conversation, provide:
+
+Advice:
+- ...
+
+Next Steps:
+- ...
+
+Conversation:
+{conversation}
+
+Rules:
+- Do NOT add symptoms
+- Keep it concise
+"""
+
+        response = await llm.ainvoke(summary_prompt)
+        output = response.strip()
+
+        return {
+            "symptoms": symptoms_text,
+            "summary": output
+        }
+
+    except Exception as e:
+        logger.error(f"❌ Summary Error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Summary failed")
+        
 # --- Static Files ---
 # Mount the public directory to serve static files
 # IMPORTANT: Mounted AFTER API routes to prevent potential conflicts

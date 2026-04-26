@@ -349,10 +349,25 @@ async def invoke_llm(input_data: LLMInput):
                 "emergency_detected": True,
             }
 
-        payload = {
-            "inputs": user_input,
-            "parameters": input_data.parameters.model_dump(),
-        }
+        formatted_prompt = f"""
+You are CareConnect, an AI healthcare assistant.
+
+Rules:
+- ONLY respond to what the user says
+- DO NOT assume conditions
+- DO NOT introduce new symptoms or diseases
+- DO NOT diagnose
+- Keep responses SHORT (2-4 sentences max)
+- Provide general advice only
+
+User: {user_input}
+Assistant:
+"""
+
+payload = {
+    "inputs": formatted_prompt,
+    "parameters": input_data.parameters.model_dump(),
+}
 
         logger.info(f"Sending payload to LLM endpoint: {payload}")
 
